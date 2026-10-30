@@ -9,7 +9,7 @@ if [ -e "$DEST" ] && [ -n "$(ls -A "$DEST" 2>/dev/null)" ]; then
   echo "Recusado: $DEST ja existe e nao esta vazio."; exit 1
 fi
 mkdir -p "$DEST"
-cp -R "$HERE/template/." "$DEST/"
+cp -R "$HERE/plugins/ipremium-kit/template/." "$DEST/"
 git -C "$DEST" init -q -b main
 echo "Projeto criado em $DEST."
 echo "Proximo passo: abrir o Claude Code la dentro e pedir a skill new-project (preenche CLAUDE.md, PRODUCT.md e ADR 0001)."

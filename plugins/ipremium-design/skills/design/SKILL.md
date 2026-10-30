@@ -9,11 +9,10 @@ Clean, premium, quiet. Content is the hero, the chrome stays out of its way, one
 where you are, nothing shouts. This file records **why** BOOKLIN looks the way it does, so any
 project can reach the same level of polish in its own colours.
 
-The owner's verdict on the BOOKLIN-styled example: the quality is right, but it does **not**
+Lesson from applying this reference to another project: the quality is right, but it does **not**
 have to use those colours or follow that design strictly. Treat it as a reference.
 
-Source of truth for BOOKLIN itself (read when working on BOOKLIN, or when this file looks off):
-`Desktop/BOOKLESS/docs/design/landing.md`, `app-v5.md`, `src/app/globals.css`, `landing.css`.
+Source of truth for BOOKLIN itself: the BOOKLIN repository (`docs/design/`, `globals.css`). Here they are principles, not values.
 
 ## How to use it
 

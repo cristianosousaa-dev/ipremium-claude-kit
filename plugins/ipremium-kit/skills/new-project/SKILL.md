@@ -6,7 +6,7 @@ description: Arrancar um projeto novo da iPremium a partir do template. Usar qua
 # Novo projeto iPremium
 
 1. **Perguntar so o que falta** (uma mensagem): cliente, o que e, publico, tom, prazo, dados pessoais ou dinheiro envolvidos?
-2. **Copiar o template** (`template/` do repo `claude-kit`) para a pasta do projeto. Substituir os marcadores `<...>` (nome, ORG do GitHub, PROJECT_REF).
+2. **Copiar o template** que vem dentro deste plugin: `TPL=$(find "$HOME/.claude/plugins" -type d -path "*ipremium-kit*/template" | head -1)` e `cp -R "$TPL/." <pasta-do-projeto>` (ou `bash new-project.sh <pasta>` no clone do repo `ipremium-claude-kit`). Substituir os marcadores `<...>` (nome, ORG do GitHub, PROJECT_REF).
 3. **Preencher `PRODUCT.md`** (negocio, publico, tom) e `CLAUDE.md` (stack, comandos). So fatos verificados; o que nao se sabe fica como pergunta.
 4. **`package.json`**: garantir os scripts `lint`, `typecheck`, `test`, `build` e `verify` (`npm run lint && npm run typecheck && npm test && npm run build`).
 5. **Contas do cliente** (checklist, o humano cria): repo na organizacao GitHub da empresa, projeto Vercel, projeto Supabase (regiao UE), dominio no Cloudflare, Sentry, Resend. MFA em todos. Segredos so em variaveis de ambiente da Vercel e no gestor de passwords, nunca no repo nem no chat.

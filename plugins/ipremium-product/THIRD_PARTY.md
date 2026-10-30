@@ -18,7 +18,7 @@ Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edi
 | summarize-interview | https://github.com/phuryn/pm-skills | 2a12295a7717 | MIT |
 | release-notes | https://github.com/phuryn/pm-skills | 2a12295a7717 | MIT |
 | test-scenarios | https://github.com/phuryn/pm-skills | 2a12295a7717 | MIT |
-| proposal-builder | https://github.com/anthropics/knowledge-work-plugins | 2574e29377c7 | Apache-2.0 |
+
 | write-spec | https://github.com/anthropics/knowledge-work-plugins | 2574e29377c7 | Apache-2.0 |
 | stakeholder-update | https://github.com/anthropics/knowledge-work-plugins | 2574e29377c7 | Apache-2.0 |
 | user-research | https://github.com/anthropics/knowledge-work-plugins | 2574e29377c7 | Apache-2.0 |

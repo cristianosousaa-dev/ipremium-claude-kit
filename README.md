@@ -17,7 +17,7 @@ git clone https://github.com/cristianosousaa-dev/ipremium-claude-kit && bash ipr
 ```
 
 Repo privado: ter `gh auth login` feito. Ao mudar para a organização da empresa, passar o novo `org/repo` ao `install.sh`
-e a `extraKnownMarketplaces` em `template/.claude/settings.json`.
+e a `extraKnownMarketplaces` em `plugins/ipremium-kit/template/.claude/settings.json`.
 
 ## Projeto novo
 ```bash
@@ -45,7 +45,7 @@ Marketplace com 13 plugins. Cada projeto liga só os que usa (cada skill ligada 
 | `ipremium-commerce` | 7 | Shopify |
 | `ipremium-automation` | 7 | n8n |
 
-Também: `template/` (CLAUDE.md cabeça-tronco-membros, `.claude/rules/`, permissões, CI, runbooks), `user/CLAUDE.md` (global) e `install-skills.sh` (o que a licença não deixa copiar: Trail of Bits, Semgrep, documentos Office da Anthropic, WordPress).
+Também: `plugins/ipremium-kit/template/` (CLAUDE.md cabeça-tronco-membros, `.claude/rules/`, permissões, CI, runbooks), `user/CLAUDE.md` (global) e `install-skills.sh` (o que a licença não deixa copiar: Trail of Bits, Semgrep, documentos Office da Anthropic, WordPress).
 
 ## Skills de terceiros
 
