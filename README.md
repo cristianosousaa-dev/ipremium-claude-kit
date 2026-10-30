@@ -23,9 +23,9 @@ e a `extraKnownMarketplaces` em `plugins/ipremium-kit/template/.claude/settings.
 
 Cada projeto criado com `new-project.sh` traz um portão: o hook `plan-gate` não deixa escrever código enquanto não existir `docs/plan/APPROVED.md`. A skill `kickoff` conduz o planeamento (uma ronda de perguntas com respostas recomendadas, plano em 9 ficheiros (inclui segurança e privacidade, e testes e qualidade), revisão por agentes em paralelo, aprovação explícita). Só projetos com o ficheiro `.claude/plan-gate` ficam sujeitos; apagá-lo desliga o portão.
 
-## Guia para a direção
+## Documento para a direção
 
-`docs/iPremium_Guia_Direcao_IA.pdf` (14 páginas): método, ferramentas, garantias, escolha do modelo de IA por tipo de projeto e referências de preço. Origem em `docs/guia/` (`node docs/guia/build.mjs` regenera o PDF; logótipos em `docs/guia/logos/`, Simple Icons, CC0).
+`docs/iPremium_Metodologia_IA.pdf` (11 páginas, sem preços nem prazos): metodologia, escolha de arquitetura e stack, ferramentas, garantias, modelo de IA por tarefa e por tipo de projeto, trabalho remoto e questões para a primeira reunião. Fonte em `docs/guia/` (`node docs/guia/build.mjs` regenera o PDF; logótipos em `docs/guia/logos/`, Simple Icons, CC0).
 
 ## Projeto novo
 ```bash

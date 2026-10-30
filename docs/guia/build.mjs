@@ -8,7 +8,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT_HTML = join(HERE, "guia.html");
-const OUT_PDF = join(resolve(HERE, "..", ".."), "docs", "iPremium_Guia_Direcao_IA.pdf");
+const OUT_PDF = join(resolve(HERE, "..", ".."), "docs", "iPremium_Metodologia_IA.pdf");
 
 let html = readFileSync(join(HERE, "guia.template.html"), "utf8");
 // inline the brand logos (Simple Icons, CC0): no network needed when printing
