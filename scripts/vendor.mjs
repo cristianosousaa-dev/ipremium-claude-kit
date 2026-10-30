@@ -104,6 +104,9 @@ for (const [pack, repos] of Object.entries(manifest.packs)) {
     mkdirSync(dirname(dest), { recursive: true });
     rmSync(dest, { recursive: true, force: true });
     cpSync(r.src, dest, { recursive: true, filter: (s) => !s.includes(`${join("", ".git")}`) });
+    // Our own model choice for vendored agents (manifest "agentModels"): reproducible, never hand-edited.
+    const wanted = r.kind === "agent" && manifest.agentModels?.[r.name];
+    if (wanted) writeFileSync(dest, readFileSync(dest, "utf8").replace(/^model:\s*\S+/m, `model: ${wanted}`));
     const licDest = join(target, "licenses", `${r.repo.replace("/", "__")}.LICENSE`);
     if (r.lic.file) cpSync(join(CACHE, r.repo.replace("/", "__"), r.lic.file), licDest);
     else if (r.lic.text) writeFileSync(licDest, r.lic.text);

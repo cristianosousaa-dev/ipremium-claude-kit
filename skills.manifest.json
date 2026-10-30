@@ -1,4 +1,8 @@
 {
+  "agentModels": {
+    "security-reviewer": "opus",
+    "database-reviewer": "opus"
+  },
   "packs": {
     "core": [
       {
