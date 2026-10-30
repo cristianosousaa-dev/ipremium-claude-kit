@@ -80,6 +80,9 @@ for (const [pack, repos] of Object.entries(manifest.packs)) {
     }
   }
   if (mode !== "vendor") continue;
+  // Prune what a previous run vendored (listed in THIRD_PARTY.md) so removing a skill from the manifest removes it here too.
+  const prev = join(target, "THIRD_PARTY.md");
+  if (existsSync(prev)) for (const m of readFileSync(prev, "utf8").matchAll(/^\| ([\w.-]+) \| https/gm)) rmSync(join(target, "skills", m[1]), { recursive: true, force: true });
   mkdirSync(join(target, "skills"), { recursive: true });
   mkdirSync(join(target, "licenses"), { recursive: true });
   const lines = [`# Third-party skills in ${basename(target)}`, "", "Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edit here: change `skills.manifest.json` and run `node scripts/vendor.mjs vendor`.", "", "| Skill | Source | Commit | Licence |", "|---|---|---|---|"];

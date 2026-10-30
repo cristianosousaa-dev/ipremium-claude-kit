@@ -14,20 +14,68 @@
     },
     {
       "name": "ipremium-web",
-      "description": "Web e interface: Next/React, UI/UX, acessibilidade, SEO e AEO, performance, testes de browser.",
+      "description": "Web: Next/React, Tailwind, shadcn, TanStack Query, Zod, SEO e AEO, performance, Playwright.",
       "source": "./plugins/ipremium-web",
       "category": "productivity"
     },
     {
+      "name": "ipremium-design",
+      "description": "Design e UX: skill design (barra de qualidade), acessibilidade, tipografia, microinteracoes, critica de interface, copy de UX.",
+      "source": "./plugins/ipremium-design",
+      "category": "productivity"
+    },
+    {
       "name": "ipremium-data",
-      "description": "Dados: Supabase, Postgres, migracoes, desenho de API.",
+      "description": "Dados: Supabase, Postgres, migracoes, desenho de API, backend Node, OpenAPI.",
       "source": "./plugins/ipremium-data",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-engineering",
+      "description": "Engenharia a fundo: especificacao, implementacao incremental, seguranca e hardening, RGPD, modelo de ameacas, arquitetura limpa, legado.",
+      "source": "./plugins/ipremium-engineering",
       "category": "productivity"
     },
     {
       "name": "ipremium-integrations",
       "description": "Integracoes: Stripe, Resend e react-email, Sentry, Cloudflare, Vercel.",
       "source": "./plugins/ipremium-integrations",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-ops",
+      "description": "Operacoes: CI/CD, Docker, observabilidade, runbooks, incidentes, postmortems, deploy checklist.",
+      "source": "./plugins/ipremium-ops",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-product",
+      "description": "Produto e propostas: PRD, user stories, discovery, proposta de cliente, specs, documentacao tecnica.",
+      "source": "./plugins/ipremium-product",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-growth",
+      "description": "Crescimento: CRO, analytics, preco, vendas, copy, conteudo, lancamento.",
+      "source": "./plugins/ipremium-growth",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-ai",
+      "description": "IA: Claude API, MCP, skills, prompts, RAG, revisao de seguranca de prompts.",
+      "source": "./plugins/ipremium-ai",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-mobile",
+      "description": "Mobile: Expo, React Native, EAS.",
+      "source": "./plugins/ipremium-mobile",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-commerce",
+      "description": "E-commerce: Shopify (Admin, Storefront, Liquid, Hydrogen, Functions).",
+      "source": "./plugins/ipremium-commerce",
       "category": "productivity"
     },
     {

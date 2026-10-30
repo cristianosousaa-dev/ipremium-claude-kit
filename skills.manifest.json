@@ -1,214 +1,90 @@
 {
   "packs": {
     "core": [
-      {
-        "repo": "mattpocock/skills",
-        "skills": [
-          "to-spec",
-          "codebase-design",
-          "code-review",
-          "diagnosing-bugs",
-          "tdd",
-          "grill-me"
-        ]
-      },
-      {
-        "repo": "obra/superpowers",
-        "skills": [
-          "systematic-debugging",
-          "verification-before-completion",
-          "brainstorming",
-          "requesting-code-review",
-          "receiving-code-review"
-        ]
-      },
-      {
-        "repo": "addyosmani/agent-skills",
-        "skills": [
-          "planning-and-task-breakdown",
-          "git-workflow-and-versioning"
-        ]
-      },
-      {
-        "repo": "affaan-m/ecc",
-        "skills": [
-          "architecture-decision-records",
-          "security-review",
-          "search-first",
-          "context-budget",
-          "strategic-compact",
-          "error-handling"
-        ]
-      },
-      {
-        "repo": "github/awesome-copilot",
-        "skills": [
-          "secret-scanning"
-        ]
-      },
-      {
-        "repo": "agamm/claude-code-owasp",
-        "skills": [
-          "owasp-security"
-        ]
-      }
+      { "repo": "mattpocock/skills", "skills": ["to-spec", "codebase-design", "code-review", "diagnosing-bugs", "tdd", "grill-me"] },
+      { "repo": "obra/superpowers", "skills": ["systematic-debugging", "verification-before-completion", "brainstorming", "requesting-code-review", "receiving-code-review"] },
+      { "repo": "addyosmani/agent-skills", "skills": ["planning-and-task-breakdown", "git-workflow-and-versioning"] },
+      { "repo": "affaan-m/ecc", "skills": ["architecture-decision-records", "security-review", "search-first", "context-budget", "strategic-compact", "error-handling"] },
+      { "repo": "github/awesome-copilot", "skills": ["secret-scanning"] },
+      { "repo": "agamm/claude-code-owasp", "skills": ["owasp-security"] }
+    ],
+    "engineering": [
+      { "repo": "addyosmani/agent-skills", "skills": ["spec-driven-development", "incremental-implementation", "code-simplification", "context-engineering", "source-driven-development", "security-and-hardening", "deprecation-and-migration"] },
+      { "repo": "wshobson/agents", "skills": ["gdpr-data-handling", "stride-analysis-patterns", "secrets-management"] },
+      { "repo": "wondelai/skills", "skills": ["clean-architecture", "refactoring-patterns", "working-with-legacy-code", "release-it", "domain-driven-design", "system-design"] }
     ],
     "web": [
-      {
-        "repo": "vercel-labs/agent-skills",
-        "skills": [
-          "vercel-react-best-practices",
-          "web-design-guidelines"
-        ]
-      },
-      {
-        "repo": "wshobson/agents",
-        "skills": [
-          "nextjs-app-router-patterns",
-          "tailwind-design-system",
-          "typescript-advanced-types"
-        ]
-      },
-      {
-        "repo": "shadcn-ui/ui",
-        "skills": [
-          "shadcn"
-        ]
-      },
-      {
-        "repo": "addyosmani/web-quality-skills",
-        "skills": [
-          "seo",
-          "performance",
-          "accessibility",
-          "core-web-vitals",
-          "best-practices",
-          "web-quality-audit"
-        ]
-      },
-      {
-        "repo": "coreyhaines31/marketingskills",
-        "skills": [
-          "seo-audit",
-          "ai-seo",
-          "site-architecture",
-          "copywriting"
-        ]
-      },
-      {
-        "repo": "currents-dev/playwright-best-practices-skill",
-        "skills": [
-          "playwright-best-practices"
-        ]
-      },
-      {
-        "repo": "anthropics/skills",
-        "skills": [
-          "webapp-testing"
-        ]
-      },
-      {
-        "repo": "cloudflare/skills",
-        "skills": [
-          "web-perf"
-        ]
-      },
-      {
-        "repo": "affaan-m/ecc",
-        "skills": [
-          "frontend-patterns",
-          "frontend-a11y",
-          "accessibility",
-          "react-performance",
-          "react-testing",
-          "e2e-testing"
-        ]
-      }
+      { "repo": "vercel-labs/agent-skills", "skills": ["vercel-react-best-practices", "composition-patterns"] },
+      { "repo": "wshobson/agents", "skills": ["nextjs-app-router-patterns", "tailwind-design-system", "typescript-advanced-types"] },
+      { "repo": "shadcn-ui/ui", "skills": ["shadcn"] },
+      { "repo": "addyosmani/web-quality-skills", "skills": ["seo", "performance", "core-web-vitals", "best-practices", "web-quality-audit"] },
+      { "repo": "coreyhaines31/marketingskills", "skills": ["seo-audit", "ai-seo", "site-architecture", "schema"] },
+      { "repo": "currents-dev/playwright-best-practices-skill", "skills": ["playwright-best-practices"] },
+      { "repo": "anthropics/skills", "skills": ["webapp-testing"] },
+      { "repo": "cloudflare/skills", "skills": ["web-perf"] },
+      { "repo": "affaan-m/ecc", "skills": ["frontend-patterns", "react-performance", "react-testing", "e2e-testing"] },
+      { "repo": "deckardger/tanstack-agent-skills", "skills": ["tanstack-query-best-practices"] },
+      { "repo": "pproenca/dot-skills", "skills": ["zod"] },
+      { "repo": "addyosmani/agent-skills", "skills": ["browser-testing-with-devtools"] }
+    ],
+    "design": [
+      { "repo": "vercel-labs/agent-skills", "skills": ["web-design-guidelines"] },
+      { "repo": "affaan-m/ecc", "skills": ["frontend-a11y"] },
+      { "repo": "addyosmani/web-quality-skills", "skills": ["accessibility"] },
+      { "repo": "anthropics/knowledge-work-plugins", "skills": ["accessibility-review", "design-critique", "ux-copy"] },
+      { "repo": "wondelai/skills", "skills": ["refactoring-ui", "ux-heuristics", "web-typography", "microinteractions"] },
+      { "repo": "addyosmani/agent-skills", "skills": ["frontend-ui-engineering"] }
     ],
     "data": [
-      {
-        "repo": "supabase/agent-skills",
-        "skills": [
-          "supabase",
-          "supabase-postgres-best-practices"
-        ]
-      },
-      {
-        "repo": "affaan-m/ecc",
-        "skills": [
-          "postgres-patterns",
-          "database-migrations",
-          "api-design",
-          "backend-patterns"
-        ]
-      }
+      { "repo": "supabase/agent-skills", "skills": ["supabase", "supabase-postgres-best-practices"] },
+      { "repo": "affaan-m/ecc", "skills": ["postgres-patterns", "database-migrations", "api-design", "backend-patterns"] },
+      { "repo": "wshobson/agents", "skills": ["nodejs-backend-patterns", "openapi-spec-generation"] },
+      { "repo": "addyosmani/agent-skills", "skills": ["api-and-interface-design"] }
     ],
     "integrations": [
-      {
-        "repo": "stripe/ai",
-        "skills": [
-          "stripe-best-practices"
-        ]
-      },
-      {
-        "repo": "wshobson/agents",
-        "skills": [
-          "stripe-integration"
-        ]
-      },
-      {
-        "repo": "resend/resend-skills",
-        "skills": [
-          "resend"
-        ]
-      },
-      {
-        "repo": "resend/react-email",
-        "skills": [
-          "react-email"
-        ]
-      },
-      {
-        "repo": "resend/email-best-practices",
-        "skills": [
-          "email-best-practices"
-        ]
-      },
-      {
-        "repo": "getsentry/sentry-for-ai",
-        "skills": [
-          "sentry-nextjs-sdk",
-          "sentry-sdk-setup"
-        ]
-      },
-      {
-        "repo": "cloudflare/skills",
-        "skills": [
-          "cloudflare",
-          "wrangler"
-        ]
-      },
-      {
-        "repo": "vercel-labs/agent-skills",
-        "skills": [
-          "deploy-to-vercel",
-          "vercel-cli-with-tokens"
-        ]
-      }
+      { "repo": "stripe/ai", "skills": ["stripe-best-practices"] },
+      { "repo": "wshobson/agents", "skills": ["stripe-integration"] },
+      { "repo": "resend/resend-skills", "skills": ["resend"] },
+      { "repo": "resend/react-email", "skills": ["react-email"] },
+      { "repo": "resend/email-best-practices", "skills": ["email-best-practices"] },
+      { "repo": "getsentry/sentry-for-ai", "skills": ["sentry-nextjs-sdk", "sentry-sdk-setup"] },
+      { "repo": "cloudflare/skills", "skills": ["cloudflare", "wrangler"] },
+      { "repo": "vercel-labs/agent-skills", "skills": ["deploy-to-vercel", "vercel-cli-with-tokens"] }
+    ],
+    "ops": [
+      { "repo": "addyosmani/agent-skills", "skills": ["ci-cd-and-automation", "observability-and-instrumentation", "shipping-and-launch"] },
+      { "repo": "wshobson/agents", "skills": ["github-actions-templates", "cost-optimization"] },
+      { "repo": "github/awesome-copilot", "skills": ["multi-stage-dockerfile", "git-commit"] },
+      { "repo": "anthropics/knowledge-work-plugins", "skills": ["incident-response", "deploy-checklist"] },
+      { "repo": "riekelt/technical-writer", "skills": ["writing-runbooks", "writing-postmortems", "writing-changelogs"] }
+    ],
+    "product": [
+      { "repo": "github/awesome-copilot", "skills": ["prd"] },
+      { "repo": "phuryn/pm-skills", "skills": ["create-prd", "user-stories", "job-stories", "prioritize-features", "pre-mortem", "user-personas", "customer-journey-map", "product-strategy", "north-star-metric", "interview-script", "summarize-interview", "release-notes", "test-scenarios"] },
+      { "repo": "anthropics/knowledge-work-plugins", "skills": ["proposal-builder", "write-spec", "stakeholder-update", "user-research"] },
+      { "repo": "riekelt/technical-writer", "skills": ["technical-writing", "writing-design-docs"] },
+      { "repo": "wondelai/skills", "skills": ["mom-test", "jobs-to-be-done"] }
+    ],
+    "growth": [
+      { "repo": "coreyhaines31/marketingskills", "skills": ["cro", "analytics", "conversion-tracking", "pricing", "sales-enablement", "cold-email", "copywriting", "copy-editing", "product-marketing", "launch", "marketing-plan", "ab-testing", "content-strategy", "customer-research", "competitor-profiling", "onboarding", "offers", "lead-magnets", "programmatic-seo"] },
+      { "repo": "wondelai/skills", "skills": ["storybrand-messaging", "one-page-marketing"] },
+      { "repo": "affaan-m/ecc", "skills": ["brand-discovery"] }
+    ],
+    "ai": [
+      { "repo": "anthropics/skills", "skills": ["claude-api", "mcp-builder", "skill-creator"] },
+      { "repo": "wshobson/agents", "skills": ["prompt-engineering-patterns", "rag-implementation"] },
+      { "repo": "github/awesome-copilot", "skills": ["ai-prompt-engineering-safety-review"] }
+    ],
+    "mobile": [
+      { "repo": "expo/skills", "skills": ["expo-router", "expo-data-fetching", "expo-native-ui", "expo-design-system", "expo-project-structure", "expo-dev-client", "expo-animation", "expo-upgrade", "eas-workflows", "eas-update", "eas-app-stores"] },
+      { "repo": "vercel-labs/agent-skills", "skills": ["vercel-react-native-skills"] },
+      { "repo": "affaan-m/ecc", "skills": ["react-native-patterns"] }
+    ],
+    "commerce": [
+      { "repo": "shopify/shopify-ai-toolkit", "skills": ["shopify-dev", "shopify-admin", "shopify-storefront-graphql", "shopify-liquid", "shopify-hydrogen", "shopify-functions", "shopify-custom-data"] }
     ],
     "automation": [
-      {
-        "repo": "czlonkowski/n8n-skills",
-        "skills": [
-          "n8n-workflow-patterns",
-          "n8n-mcp-tools-expert",
-          "n8n-node-configuration",
-          "n8n-validation-expert",
-          "n8n-expression-syntax",
-          "n8n-code-javascript",
-          "n8n-code-python"
-        ]
-      }
+      { "repo": "czlonkowski/n8n-skills", "skills": ["n8n-workflow-patterns", "n8n-mcp-tools-expert", "n8n-node-configuration", "n8n-validation-expert", "n8n-expression-syntax", "n8n-code-javascript", "n8n-code-python"] }
     ]
   }
 }

@@ -19,5 +19,13 @@
   "resend/react-email": "99548d917633daeaddf049512448538607d47432",
   "resend/email-best-practices": "cf5438cf10970d715dd204de721ffc89869d8f6d",
   "getsentry/sentry-for-ai": "80642456253f2fcd529a38d9ac82f299e80dc89c",
-  "czlonkowski/n8n-skills": "e037563e101749e630e6688d121d04529fe6ee7b"
+  "czlonkowski/n8n-skills": "e037563e101749e630e6688d121d04529fe6ee7b",
+  "wondelai/skills": "c172996495bed0fcd26896a9416b2093fd7073f0",
+  "deckardger/tanstack-agent-skills": "b2fc14c974b2ca09b38de09c28237f240175205b",
+  "pproenca/dot-skills": "cf93c57cac89d6fc3e4194686000411567f5caf3",
+  "anthropics/knowledge-work-plugins": "2574e29377c7173d0cecffef29a6ecbd7f8ccb5d",
+  "riekelt/technical-writer": "85e53729dd959a2795d593d6769068e342cf3486",
+  "phuryn/pm-skills": "2a12295a7717569baa7be181b4cfebe3ca38a6bb",
+  "expo/skills": "05754e71d02abe0d2d7a2fb5259ccac41f5ea59c",
+  "shopify/shopify-ai-toolkit": "a3d20f8dc284a2e8ae25272fa79520888abb5dcb"
 }

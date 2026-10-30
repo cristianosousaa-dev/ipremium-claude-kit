@@ -2,7 +2,7 @@
 # Skills que NAO vao copiadas para o repo porque a licenca nao o permite ou nao e clara.
 # As restantes ja vem dentro dos plugins (ver plugins/*/THIRD_PARTY.md).
 # Cada uma e codigo de terceiros: ler o SKILL.md antes de instalar na maquina de trabalho.
-# Uso: bash install-skills.sh [seguranca|candidatas]   (sem argumento = seguranca)
+# Uso: bash install-skills.sh [seguranca|documentos|wordpress|candidatas]   (sem argumento = seguranca)
 set -euo pipefail
 add() { npx -y skills add "$1" -g -y </dev/null; }
 
@@ -15,6 +15,25 @@ seguranca() {
   add trailofbits/skills@variant-analysis             # procura a mesma falha noutros sitios
   # Semgrep: licenca propria (Semgrep Rules License), nao redistribuivel.
   add semgrep/skills@semgrep
+}
+
+documentos() {
+  # Skills da Anthropic para Word, PDF, PowerPoint e Excel: licenca proprietaria, so instalar da fonte.
+  add anthropics/skills@docx
+  add anthropics/skills@pdf
+  add anthropics/skills@pptx
+  add anthropics/skills@xlsx
+}
+
+wordpress() {
+  # Licenca GPL (WordPress): instalar da fonte, nao copiar para o kit.
+  add wordpress/agent-skills@wordpress-router
+  add wordpress/agent-skills@wp-block-development
+  add wordpress/agent-skills@wp-block-themes
+  add wordpress/agent-skills@wp-plugin-development
+  add wordpress/agent-skills@wp-rest-api
+  add wordpress/agent-skills@wp-performance
+  add wordpress/agent-skills@wp-wpcli-and-ops
 }
 
 candidatas() {

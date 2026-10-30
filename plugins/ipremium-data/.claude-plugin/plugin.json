@@ -1,7 +1,7 @@
 {
   "name": "ipremium-data",
-  "version": "0.1.0",
-  "description": "Dados: Supabase, Postgres, migracoes, desenho de API.",
+  "version": "0.2.0",
+  "description": "Dados: Supabase, Postgres, migracoes, desenho de API, backend Node, OpenAPI.",
   "author": {
     "name": "iPremium"
   }

@@ -8,7 +8,7 @@ Base para começar qualquer projeto com Claude Code: plugin (skills, agentes, ho
 **Pelo Claude Code (plugin)**
 ```
 /plugin marketplace add cristianosousaa-dev/ipremium-claude-kit
-/plugin install ipremium-kit@ipremium   (e ipremium-web, ipremium-data, ...)
+/plugin install ipremium-kit@ipremium   (e ipremium-web, ipremium-design, ipremium-data, ...)
 ```
 
 **Pela linha de comandos, tudo de uma vez** (plugin, plugins oficiais, skills de terceiros, regras globais)
@@ -27,17 +27,25 @@ Abrir o Claude Code na pasta e pedir a skill `new-project`.
 
 ## O que há
 
-Marketplace com 5 plugins (cada projeto liga só os que usa; cada skill carrega a sua descrição no contexto):
+Marketplace com 13 plugins. Cada projeto liga só os que usa (cada skill ligada carrega a descrição no contexto). Por defeito: `kit`, `web`, `design`, `data`.
 
-| Plugin | Quando | Conteúdo |
+| Plugin | Skills | Para quê |
 |---|---|---|
-| `ipremium-kit` | sempre | processo iPremium (`new-project`, `definition-of-done`, `release`), agentes `code-reviewer`, `db-guard`, `qa-browser`, hook que bloqueia force push, `reset --hard`, `rm -rf`, SQL destrutivo e `--no-verify`; planeamento, debugging, TDD, code review, segurança, segredos, ADRs, contexto |
-| `ipremium-web` | sites e apps | skill `design`, Next/React, Tailwind, shadcn, a11y, SEO/AEO, performance, Playwright |
-| `ipremium-data` | com base de dados | Supabase, Postgres, migrações, desenho de API |
-| `ipremium-integrations` | quando usa | Stripe, Resend e react-email, Sentry, Cloudflare, Vercel |
-| `ipremium-automation` | conta iPremium | n8n |
+| `ipremium-kit` (sempre) | 24 | processo iPremium (`new-project`, `definition-of-done`, `release`), agentes `code-reviewer`, `db-guard`, `qa-browser`, hook anti-destruição; planeamento, debugging, TDD, code review, segurança, segredos, ADRs, contexto |
+| `ipremium-web` | 25 | Next/React, Tailwind, shadcn, TanStack Query, Zod, SEO e AEO, performance, Playwright |
+| `ipremium-design` | 12 | skill `design` (a tua barra de qualidade), a11y, tipografia, microinterações, crítica de UI, UX copy |
+| `ipremium-data` | 9 | Supabase, Postgres, migrações, API, backend Node, OpenAPI |
+| `ipremium-engineering` | 16 | spec-driven, implementação incremental, hardening, RGPD, STRIDE, arquitetura limpa, DDD, legado |
+| `ipremium-ops` | 12 | CI/CD, Docker, observabilidade, runbooks, incidentes, postmortems, deploy checklist |
+| `ipremium-product` | 22 | PRD, user stories, discovery, proposta de cliente, specs, documentação técnica |
+| `ipremium-growth` | 22 | CRO, analytics, preço, vendas, copy, conteúdo, lançamento |
+| `ipremium-integrations` | 11 | Stripe, Resend e react-email, Sentry, Cloudflare, Vercel |
+| `ipremium-ai` | 6 | Claude API, MCP, skills, prompts, RAG |
+| `ipremium-mobile` | 13 | Expo, React Native, EAS |
+| `ipremium-commerce` | 7 | Shopify |
+| `ipremium-automation` | 7 | n8n |
 
-Também: `template/` (CLAUDE.md cabeça-tronco-membros, `.claude/rules/`, permissões, CI, runbooks), `user/CLAUDE.md` (global), `install-skills.sh` (segurança extra de licença restritiva: Trail of Bits, Semgrep).
+Também: `template/` (CLAUDE.md cabeça-tronco-membros, `.claude/rules/`, permissões, CI, runbooks), `user/CLAUDE.md` (global) e `install-skills.sh` (o que a licença não deixa copiar: Trail of Bits, Semgrep, documentos Office da Anthropic, WordPress).
 
 ## Skills de terceiros
 

@@ -1,14 +1,25 @@
 {
   "extraKnownMarketplaces": {
     "ipremium": {
-      "source": { "source": "github", "repo": "cristianosousaa-dev/ipremium-claude-kit" }
+      "source": {
+        "source": "github",
+        "repo": "cristianosousaa-dev/ipremium-claude-kit"
+      }
     }
   },
   "enabledPlugins": {
     "ipremium-kit@ipremium": true,
     "ipremium-web@ipremium": true,
+    "ipremium-design@ipremium": true,
     "ipremium-data@ipremium": true,
+    "ipremium-engineering@ipremium": false,
     "ipremium-integrations@ipremium": false,
+    "ipremium-ops@ipremium": false,
+    "ipremium-product@ipremium": false,
+    "ipremium-growth@ipremium": false,
+    "ipremium-ai@ipremium": false,
+    "ipremium-mobile@ipremium": false,
+    "ipremium-commerce@ipremium": false,
     "ipremium-automation@ipremium": false
   },
   "permissions": {

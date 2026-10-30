@@ -2,11 +2,11 @@
 # Instala o kit iPremium numa maquina nova (Mac ou Linux; no Windows usar Git Bash).
 # Requer: Claude Code (`claude`), Node (`npx`) e acesso ao repo privado (gh auth login).
 # Uso: bash install.sh [org/repo] [packs...]      ex.: bash install.sh cristianosousaa-dev/ipremium-claude-kit web data
-# Por defeito instala: kit web data. Opcionais: integrations (Stripe, Resend, Sentry...), automation (n8n).
+# Por defeito instala: kit web design data. Opcionais: engineering ops product growth ai mobile commerce integrations automation.
 set -euo pipefail
 
 REPO="${1:-cristianosousaa-dev/ipremium-claude-kit}"; shift || true
-PACKS=("$@"); [ ${#PACKS[@]} -eq 0 ] && PACKS=(kit web data)
+PACKS=("$@"); [ ${#PACKS[@]} -eq 0 ] && PACKS=(kit web design data)
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 command -v claude >/dev/null || { echo "claude nao encontrado: instalar o Claude Code primeiro."; exit 1; }

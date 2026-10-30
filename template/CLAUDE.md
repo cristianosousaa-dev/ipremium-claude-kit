@@ -33,7 +33,7 @@ Princípios, por ordem de prioridade:
 
 ## MEMBROS — como se trabalha
 
-Packs ligados (`.claude/settings.json`): `ipremium-kit` (sempre), `ipremium-web`, `ipremium-data`. Ligar `ipremium-integrations` (Stripe, Resend, Sentry, Cloudflare, Vercel) ou `ipremium-automation` (n8n) só quando o projeto os usa: cada skill ligada custa contexto.
+Packs ligados (`.claude/settings.json`): `ipremium-kit` (sempre), `ipremium-web`, `ipremium-design`, `ipremium-data`. Ligar só quando o projeto precisa, porque cada skill ligada custa contexto: `engineering` (segurança e arquitetura a fundo, legado), `ops` (CI/CD, observabilidade, incidentes), `product` (PRD, propostas, discovery), `growth` (CRO, analytics, preço, copy), `ai`, `mobile`, `commerce` (Shopify), `integrations` (Stripe, Resend, Sentry, Cloudflare, Vercel), `automation` (n8n).
 
 | Quando | Usar |
 |---|---|
