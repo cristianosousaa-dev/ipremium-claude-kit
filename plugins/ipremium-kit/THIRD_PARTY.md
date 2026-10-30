@@ -1,8 +1,8 @@
-# Third-party skills in ipremium-kit
+# Third-party content in ipremium-kit
 
 Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edit here: change `skills.manifest.json` and run `node scripts/vendor.mjs vendor`.
 
-| Skill | Source | Commit | Licence |
+| Item | Source | Commit | Licence |
 |---|---|---|---|
 | to-spec | https://github.com/mattpocock/skills | a496f5513d4a | MIT |
 | codebase-design | https://github.com/mattpocock/skills | a496f5513d4a | MIT |
@@ -23,5 +23,42 @@ Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edi
 | context-budget | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | strategic-compact | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | error-handling | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| verification-loop | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| coding-standards | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| git-workflow | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| safety-guard | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| codebase-onboarding | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| code-tour | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| click-path-audit | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| ai-regression-testing | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| token-budget-advisor | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| deep-research | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| documentation-lookup | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| tdd-workflow | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:security-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:code-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:database-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:react-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:typescript-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:silent-failure-hunter | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:a11y-architect | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:seo-specialist | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:performance-optimizer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:e2e-runner | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:build-error-resolver | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:react-build-resolver | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:architect | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:planner | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:code-architect | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:code-explorer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:code-simplifier | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:refactor-cleaner | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:tdd-guide | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:docs-lookup | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:comment-analyzer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:type-design-analyzer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:pr-test-analyzer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:spec-miner | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agent:commit-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | secret-scanning | https://github.com/github/awesome-copilot | 5269f7ea2d6c | MIT |
 | owasp-security | https://github.com/agamm/claude-code-owasp | 8ac7965caa21 | MIT |

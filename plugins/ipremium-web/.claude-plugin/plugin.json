@@ -1,6 +1,6 @@
 {
   "name": "ipremium-web",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Web: Next/React, Tailwind, shadcn, TanStack Query, Zod, SEO e AEO, performance, Playwright.",
   "author": {
     "name": "iPremium"

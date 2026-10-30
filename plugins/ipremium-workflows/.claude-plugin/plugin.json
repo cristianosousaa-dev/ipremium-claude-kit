@@ -1,0 +1,8 @@
+{
+  "name": "ipremium-workflows",
+  "version": "0.3.0",
+  "description": "Fluxos de trabalho ECC como comandos: /plan, /feature-dev, /code-review, /build-fix, /orch-*, /prp-*, /pr, /checkpoint.",
+  "author": {
+    "name": "iPremium"
+  }
+}

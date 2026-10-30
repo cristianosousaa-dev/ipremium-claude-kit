@@ -1,8 +1,8 @@
-# Third-party skills in ipremium-engineering
+# Third-party content in ipremium-engineering
 
 Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edit here: change `skills.manifest.json` and run `node scripts/vendor.mjs vendor`.
 
-| Skill | Source | Commit | Licence |
+| Item | Source | Commit | Licence |
 |---|---|---|---|
 | spec-driven-development | https://github.com/addyosmani/agent-skills | eb07f19f52c2 | MIT |
 | incremental-implementation | https://github.com/addyosmani/agent-skills | eb07f19f52c2 | MIT |
@@ -20,3 +20,12 @@ Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edi
 | release-it | https://github.com/wondelai/skills | c172996495be | MIT |
 | domain-driven-design | https://github.com/wondelai/skills | c172996495be | MIT |
 | system-design | https://github.com/wondelai/skills | c172996495be | MIT |
+| hexagonal-architecture | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| contract-first | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| plankton-code-quality | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| council | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| santa-method | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| recursive-decision-ledger | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| security-bounty-hunter | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| agentic-engineering | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| intent-driven-development | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |

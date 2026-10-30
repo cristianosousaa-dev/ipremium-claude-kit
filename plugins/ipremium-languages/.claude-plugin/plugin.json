@@ -1,0 +1,8 @@
+{
+  "name": "ipremium-languages",
+  "version": "0.3.0",
+  "description": "Outras linguagens: revisores, resolvedores de build e padroes para Python, Go, Rust, Java, Kotlin, Swift, PHP, Ruby, C#, C++, Flutter, Vue.",
+  "author": {
+    "name": "iPremium"
+  }
+}

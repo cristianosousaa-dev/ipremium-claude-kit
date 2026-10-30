@@ -33,7 +33,7 @@ Princípios, por ordem de prioridade:
 
 ## MEMBROS — como se trabalha
 
-Packs ligados (`.claude/settings.json`): `ipremium-kit` (sempre), `ipremium-web`, `ipremium-design`, `ipremium-data`. Ligar só quando o projeto precisa, porque cada skill ligada custa contexto: `engineering` (segurança e arquitetura a fundo, legado), `ops` (CI/CD, observabilidade, incidentes), `product` (PRD, propostas, discovery), `growth` (CRO, analytics, preço, copy), `ai`, `mobile`, `commerce` (Shopify), `integrations` (Stripe, Resend, Sentry, Cloudflare, Vercel), `automation` (n8n).
+Packs ligados (`.claude/settings.json`): `kit` (sempre: agentes e skills base), `workflows` (comandos `/plan`, `/feature-dev`, `/code-review`...), `web`, `design`, `data`. Ligar só quando o projeto precisa, porque cada skill, agente e comando ligado custa contexto: `languages` (Python, Go, Rust, Java...), `engineering`, `ops`, `product`, `growth`, `ai`, `mobile`, `commerce`, `integrations`, `automation`.
 
 | Quando | Usar |
 |---|---|
@@ -42,10 +42,10 @@ Packs ligados (`.claude/settings.json`): `ipremium-kit` (sempre), `ipremium-web`
 | Antes de escrever código | `search-first` (já existe no projeto ou numa biblioteca instalada?) |
 | Bug | `systematic-debugging`: causa raiz antes da correção |
 | Lógica nova | `tdd` |
-| Interface | skill `design` (qualidade e estrutura) + `web-design-guidelines` (auditoria) + agente `qa-browser` |
-| Base de dados | skills `supabase`, `postgres-patterns`; agente `db-guard` em toda a migração |
-| Antes de dar como feito | `definition-of-done` + agente `code-reviewer` |
-| Segurança (auth, input, dinheiro, uploads, PII) | `security-review` + plugin `security-guidance` |
+| Interface | skill `design` + `web-design-guidelines`; agentes `qa-browser`, `a11y-architect`, `performance-optimizer`, `seo-specialist` (páginas públicas) |
+| Base de dados | skills `supabase`, `postgres-patterns`; agentes `database-reviewer` e `db-guard` em toda a migração |
+| Antes de dar como feito | `definition-of-done`; revisores: `code-reviewer`, `typescript-reviewer`, `react-reviewer`, `silent-failure-hunter` |
+| Segurança (auth, input, dinheiro, uploads, PII) | agente `security-reviewer` + `security-review` + plugin `security-guidance` |
 | Publicar | skill `release` |
 | Contexto a crescer | `/compact` entre tarefas; sessões curtas; uma tarefa de cada vez |
 

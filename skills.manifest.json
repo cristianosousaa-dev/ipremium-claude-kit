@@ -37,7 +37,46 @@
           "search-first",
           "context-budget",
           "strategic-compact",
-          "error-handling"
+          "error-handling",
+          "verification-loop",
+          "coding-standards",
+          "git-workflow",
+          "safety-guard",
+          "codebase-onboarding",
+          "code-tour",
+          "click-path-audit",
+          "ai-regression-testing",
+          "token-budget-advisor",
+          "deep-research",
+          "documentation-lookup",
+          "tdd-workflow"
+        ],
+        "agents": [
+          "security-reviewer",
+          "code-reviewer",
+          "database-reviewer",
+          "react-reviewer",
+          "typescript-reviewer",
+          "silent-failure-hunter",
+          "a11y-architect",
+          "seo-specialist",
+          "performance-optimizer",
+          "e2e-runner",
+          "build-error-resolver",
+          "react-build-resolver",
+          "architect",
+          "planner",
+          "code-architect",
+          "code-explorer",
+          "code-simplifier",
+          "refactor-cleaner",
+          "tdd-guide",
+          "docs-lookup",
+          "comment-analyzer",
+          "type-design-analyzer",
+          "pr-test-analyzer",
+          "spec-miner",
+          "commit-reviewer"
         ]
       },
       {
@@ -83,6 +122,20 @@
           "release-it",
           "domain-driven-design",
           "system-design"
+        ]
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "skills": [
+          "hexagonal-architecture",
+          "contract-first",
+          "plankton-code-quality",
+          "council",
+          "santa-method",
+          "recursive-decision-ledger",
+          "security-bounty-hunter",
+          "agentic-engineering",
+          "intent-driven-development"
         ]
       }
     ],
@@ -151,7 +204,12 @@
           "frontend-patterns",
           "react-performance",
           "react-testing",
-          "e2e-testing"
+          "e2e-testing",
+          "react-patterns",
+          "nextjs-turbopack",
+          "vite-patterns",
+          "design-system",
+          "browser-qa"
         ]
       },
       {
@@ -183,7 +241,12 @@
       {
         "repo": "affaan-m/ecc",
         "skills": [
-          "frontend-a11y"
+          "frontend-a11y",
+          "make-interfaces-feel-better",
+          "motion-foundations",
+          "motion-patterns",
+          "motion-advanced",
+          "liquid-glass-design"
         ]
       },
       {
@@ -230,7 +293,10 @@
           "postgres-patterns",
           "database-migrations",
           "api-design",
-          "backend-patterns"
+          "backend-patterns",
+          "prisma-patterns",
+          "redis-patterns",
+          "mysql-patterns"
         ]
       },
       {
@@ -337,6 +403,20 @@
           "writing-postmortems",
           "writing-changelogs"
         ]
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "skills": [
+          "deployment-patterns",
+          "docker-patterns",
+          "production-audit",
+          "canary-watch",
+          "kubernetes-patterns",
+          "github-ops"
+        ],
+        "agents": [
+          "opensource-sanitizer"
+        ]
       }
     ],
     "product": [
@@ -385,6 +465,14 @@
           "mom-test",
           "jobs-to-be-done"
         ]
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "skills": [
+          "product-lens",
+          "product-capability",
+          "market-research"
+        ]
       }
     ],
     "growth": [
@@ -422,7 +510,12 @@
       {
         "repo": "affaan-m/ecc",
         "skills": [
-          "brand-discovery"
+          "brand-discovery",
+          "content-engine",
+          "article-writing"
+        ],
+        "agents": [
+          "marketing-agent"
         ]
       }
     ],
@@ -446,6 +539,23 @@
         "repo": "github/awesome-copilot",
         "skills": [
           "ai-prompt-engineering-safety-review"
+        ]
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "skills": [
+          "cost-aware-llm-pipeline",
+          "prompt-optimizer",
+          "eval-harness",
+          "ai-first-engineering",
+          "mcp-server-patterns",
+          "regex-vs-llm-structured-text",
+          "agent-harness-construction",
+          "mle-workflow"
+        ],
+        "agents": [
+          "rag-pipeline-reviewer",
+          "mle-reviewer"
         ]
       }
     ],
@@ -504,6 +614,125 @@
           "n8n-expression-syntax",
           "n8n-code-javascript",
           "n8n-code-python"
+        ]
+      }
+    ],
+    "workflows": [
+      {
+        "repo": "affaan-m/ecc",
+        "commands": [
+          "plan",
+          "plan-prd",
+          "feature-dev",
+          "code-review",
+          "build-fix",
+          "security-scan",
+          "test-coverage",
+          "refactor-clean",
+          "pr",
+          "review-pr",
+          "checkpoint",
+          "save-session",
+          "resume-session",
+          "orch-add-feature",
+          "orch-fix-defect",
+          "orch-refine-code",
+          "orch-change-feature",
+          "orch-build-mvp",
+          "orch-review",
+          "prp-prd",
+          "prp-plan",
+          "prp-implement",
+          "prp-commit",
+          "prp-pr",
+          "react-build",
+          "react-review",
+          "react-test",
+          "aside",
+          "cost-report",
+          "learn",
+          "model-route"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "repo": "affaan-m/ecc",
+        "agents": [
+          "python-reviewer",
+          "fastapi-reviewer",
+          "django-reviewer",
+          "django-build-resolver",
+          "go-reviewer",
+          "go-build-resolver",
+          "rust-reviewer",
+          "rust-build-resolver",
+          "java-reviewer",
+          "java-build-resolver",
+          "kotlin-reviewer",
+          "kotlin-build-resolver",
+          "swift-reviewer",
+          "swift-build-resolver",
+          "php-reviewer",
+          "ruby-reviewer",
+          "csharp-reviewer",
+          "cpp-reviewer",
+          "cpp-build-resolver",
+          "flutter-reviewer",
+          "dart-build-resolver",
+          "fsharp-reviewer",
+          "vue-reviewer"
+        ],
+        "skills": [
+          "python-patterns",
+          "python-testing",
+          "golang-patterns",
+          "golang-testing",
+          "rust-patterns",
+          "rust-testing",
+          "kotlin-patterns",
+          "kotlin-testing",
+          "swiftui-patterns",
+          "vue-patterns",
+          "fastapi-patterns",
+          "django-patterns",
+          "django-security",
+          "django-tdd",
+          "laravel-patterns",
+          "laravel-security",
+          "laravel-tdd",
+          "springboot-patterns",
+          "springboot-security",
+          "springboot-tdd",
+          "dotnet-patterns",
+          "csharp-testing",
+          "cpp-coding-standards",
+          "cpp-testing",
+          "java-coding-standards",
+          "jpa-patterns",
+          "nestjs-patterns",
+          "dart-flutter-patterns"
+        ],
+        "commands": [
+          "python-review",
+          "go-review",
+          "go-build",
+          "go-test",
+          "rust-review",
+          "rust-build",
+          "rust-test",
+          "kotlin-review",
+          "kotlin-build",
+          "kotlin-test",
+          "cpp-review",
+          "cpp-build",
+          "cpp-test",
+          "flutter-review",
+          "flutter-build",
+          "flutter-test",
+          "gradle-build",
+          "vue-review",
+          "fastapi-review"
         ]
       }
     ]

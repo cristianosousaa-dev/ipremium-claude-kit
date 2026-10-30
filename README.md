@@ -27,25 +27,29 @@ Abrir o Claude Code na pasta e pedir a skill `new-project`.
 
 ## O que há
 
-Marketplace com 13 plugins. Cada projeto liga só os que usa (cada skill ligada carrega a descrição no contexto). Por defeito: `kit`, `web`, `design`, `data`.
+Marketplace com 15 plugins. Cada projeto liga só os que usa (cada skill, agente e comando ligado carrega a descrição no contexto). Por defeito: `kit`, `web`, `design`, `data`, `workflows` (cerca de 11 000 tokens de descrições).
 
-| Plugin | Skills | Para quê |
-|---|---|---|
-| `ipremium-kit` (sempre) | 24 | processo iPremium (`new-project`, `definition-of-done`, `release`), agentes `code-reviewer`, `db-guard`, `qa-browser`, hook anti-destruição; planeamento, debugging, TDD, code review, segurança, segredos, ADRs, contexto |
-| `ipremium-web` | 25 | Next/React, Tailwind, shadcn, TanStack Query, Zod, SEO e AEO, performance, Playwright |
-| `ipremium-design` | 12 | skill `design` (a tua barra de qualidade), a11y, tipografia, microinterações, crítica de UI, UX copy |
-| `ipremium-data` | 9 | Supabase, Postgres, migrações, API, backend Node, OpenAPI |
-| `ipremium-engineering` | 16 | spec-driven, implementação incremental, hardening, RGPD, STRIDE, arquitetura limpa, DDD, legado |
-| `ipremium-ops` | 12 | CI/CD, Docker, observabilidade, runbooks, incidentes, postmortems, deploy checklist |
-| `ipremium-product` | 22 | PRD, user stories, discovery, proposta de cliente, specs, documentação técnica |
-| `ipremium-growth` | 22 | CRO, analytics, preço, vendas, copy, conteúdo, lançamento |
-| `ipremium-integrations` | 11 | Stripe, Resend e react-email, Sentry, Cloudflare, Vercel |
-| `ipremium-ai` | 6 | Claude API, MCP, skills, prompts, RAG |
-| `ipremium-mobile` | 13 | Expo, React Native, EAS |
-| `ipremium-commerce` | 7 | Shopify |
-| `ipremium-automation` | 7 | n8n |
+| Plugin | Conteúdo |
+|---|---|
+| `ipremium-kit` (sempre) | **27 agentes do ECC** (security-reviewer, code-reviewer, database-reviewer, react-reviewer, typescript-reviewer, silent-failure-hunter, a11y-architect, seo-specialist, performance-optimizer, e2e-runner, architect, planner, tdd-guide, build resolvers...), mais `db-guard` e `qa-browser` próprios; 36 skills (processo iPremium, planeamento, debugging, TDD, code review, segurança, segredos, ADRs, contexto); hook anti-destruição |
+| `ipremium-workflows` | 31 comandos do ECC: `/plan`, `/feature-dev`, `/code-review`, `/build-fix`, `/security-scan`, `/orch-*`, `/prp-*`, `/pr`, `/checkpoint`... |
+| `ipremium-web` | Next/React/Vite, Tailwind, shadcn, TanStack Query, Zod, SEO e AEO, performance, Playwright |
+| `ipremium-design` | skill `design`, a11y, tipografia, motion, microinterações, crítica de UI, UX copy |
+| `ipremium-data` | Supabase, Postgres, migrações, API, Prisma, Redis, backend Node, OpenAPI |
+| `ipremium-languages` | 23 agentes e 28 skills do ECC: Python, FastAPI, Django, Go, Rust, Java/Spring, Kotlin, Swift, PHP/Laravel, Ruby, C#, C++, Flutter, Vue, NestJS |
+| `ipremium-engineering` | spec-driven, hardening, RGPD, STRIDE, arquitetura limpa/hexagonal, DDD, legado, council |
+| `ipremium-ops` | CI/CD, Docker, Kubernetes, observabilidade, runbooks, incidentes, postmortems, canary, production-audit |
+| `ipremium-product` | PRD, user stories, discovery, **proposta** e **handover** próprias, specs, documentação |
+| `ipremium-growth` | CRO, analytics, preço, vendas, copy, conteúdo, lançamento |
+| `ipremium-integrations` | Stripe, Resend e react-email, Sentry, Cloudflare, Vercel |
+| `ipremium-ai` | Claude API, MCP, skills, prompts, RAG, avaliação, custo de LLM |
+| `ipremium-mobile` | Expo, React Native, EAS |
+| `ipremium-commerce` | Shopify |
+| `ipremium-automation` | n8n |
 
 Também: `plugins/ipremium-kit/template/` (CLAUDE.md cabeça-tronco-membros, `.claude/rules/`, permissões, CI, runbooks), `user/CLAUDE.md` (global) e `install-skills.sh` (o que a licença não deixa copiar: Trail of Bits, Semgrep, documentos Office da Anthropic, WordPress).
+
+O ECC (Everything Claude Code, MIT) é a fonte de quase todos os agentes e comandos. Não foram copiados os seus hooks, nem os comandos que dependem dos seus scripts (`/quality-gate`, `/update-docs`, `/project-init`...).
 
 ## Skills de terceiros
 

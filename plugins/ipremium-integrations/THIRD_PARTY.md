@@ -1,8 +1,8 @@
-# Third-party skills in ipremium-integrations
+# Third-party content in ipremium-integrations
 
 Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edit here: change `skills.manifest.json` and run `node scripts/vendor.mjs vendor`.
 
-| Skill | Source | Commit | Licence |
+| Item | Source | Commit | Licence |
 |---|---|---|---|
 | stripe-best-practices | https://github.com/stripe/ai | bb4cf23be76d | MIT |
 | stripe-integration | https://github.com/wshobson/agents | 0874a27b17a2 | MIT |

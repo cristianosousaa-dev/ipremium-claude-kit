@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "ipremium-kit",
-      "description": "Base sempre ativa: processo iPremium, revisores, hook de seguranca, planeamento, debugging, TDD, seguranca e contexto.",
+      "description": "Base sempre ativa: agentes revisores do ECC (seguranca, codigo, base de dados, React, TypeScript, erros silenciosos, a11y, SEO, performance...), processo iPremium, planeamento, debugging, TDD, seguranca e contexto.",
       "source": "./plugins/ipremium-kit",
       "category": "productivity"
     },
@@ -82,6 +82,18 @@
       "name": "ipremium-automation",
       "description": "Automacao: n8n (workflows, nos, validacao, expressoes).",
       "source": "./plugins/ipremium-automation",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-workflows",
+      "description": "Fluxos de trabalho ECC como comandos: /plan, /feature-dev, /code-review, /build-fix, /orch-*, /prp-*, /pr, /checkpoint.",
+      "source": "./plugins/ipremium-workflows",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-languages",
+      "description": "Outras linguagens: revisores, resolvedores de build e padroes para Python, Go, Rust, Java, Kotlin, Swift, PHP, Ruby, C#, C++, Flutter, Vue.",
+      "source": "./plugins/ipremium-languages",
       "category": "productivity"
     }
   ]

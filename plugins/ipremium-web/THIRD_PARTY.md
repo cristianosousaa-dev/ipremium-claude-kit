@@ -1,8 +1,8 @@
-# Third-party skills in ipremium-web
+# Third-party content in ipremium-web
 
 Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edit here: change `skills.manifest.json` and run `node scripts/vendor.mjs vendor`.
 
-| Skill | Source | Commit | Licence |
+| Item | Source | Commit | Licence |
 |---|---|---|---|
 | vercel-react-best-practices | https://github.com/vercel-labs/agent-skills | 1a2c79d4e6c4 | MIT (README) |
 | composition-patterns | https://github.com/vercel-labs/agent-skills | 1a2c79d4e6c4 | MIT (README) |
@@ -26,6 +26,11 @@ Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edi
 | react-performance | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | react-testing | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | e2e-testing | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| react-patterns | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| nextjs-turbopack | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| vite-patterns | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| design-system | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
+| browser-qa | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | tanstack-query-best-practices | https://github.com/deckardger/tanstack-agent-skills | b2fc14c974b2 | MIT |
 | zod | https://github.com/pproenca/dot-skills | cf93c57cac89 | MIT |
 | browser-testing-with-devtools | https://github.com/addyosmani/agent-skills | eb07f19f52c2 | MIT |
