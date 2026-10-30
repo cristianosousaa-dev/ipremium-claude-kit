@@ -23,6 +23,13 @@ Princípios, por ordem de prioridade:
 - **Decisões:** o porquê está em `docs/adr/`. Ler o ADR da área antes de a alterar. Decisão difícil de desfazer (esquema, URLs, auth, fornecedor) = novo ADR.
 - **Ambientes:** local, preview (por PR), produção. Produção só muda por PR com CI verde.
 
+### Navegação de código (poupar contexto)
+- **Localizar antes de ler.** Definições e referências pelo LSP (plugin `typescript-lsp`); se existir `graphify-out/`, `graphify explain|path|affected "<símbolo>"`; senão Grep com padrão preciso. Só depois abrir ficheiros.
+- **Ler o intervalo de linhas necessário**, não o ficheiro inteiro. Não reler o que já está no contexto.
+- **Perguntas largas** ("onde acontece X?") vão para um subagente (`code-explorer`): devolve um resumo e o contexto principal fica limpo.
+- **Antes de renomear, apagar ou refatorar:** listar as referências (LSP ou `graphify affected`), nunca assumir.
+- Grafo desatualizado: `graphify update .` (local, sem custo). Para o ligar neste projeto: `graphify claude install`.
+
 ### Comandos
 | Para | Comando |
 |---|---|

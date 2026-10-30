@@ -51,6 +51,10 @@ Também: `plugins/ipremium-kit/template/` (CLAUDE.md cabeça-tronco-membros, `.c
 
 O ECC (Everything Claude Code, MIT) é a fonte de quase todos os agentes e comandos. Não foram copiados os seus hooks, nem os comandos que dependem dos seus scripts (`/quality-gate`, `/update-docs`, `/project-init`...).
 
+## Poupar contexto
+
+O template manda localizar antes de ler (LSP, `graphify` quando há grafo, Grep preciso), ler só intervalos de linhas e delegar pesquisas largas ao `code-explorer`. O plugin oficial `typescript-lsp` precisa do servidor: `npm i -g typescript typescript-language-server`. Poupança real **não medida**: testar num repo concreto antes de a prometer.
+
 ## Skills de terceiros
 
 As skills copiadas para os packs vêm de repositórios com licença permissiva (MIT, Apache-2.0), fixadas num commit (`skills.lock.json`). Origem, commit e licença de cada uma: `plugins/*/THIRD_PARTY.md` e `plugins/*/licenses/`.

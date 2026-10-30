@@ -19,7 +19,7 @@ for p in "${PACKS[@]}"; do claude plugin install "ipremium-$p@ipremium"; done
 
 echo "3/4  Plugins oficiais e de comunidade"
 # Nomes e marketplaces vem de artigos; se algum falhar, instalar a mao com /plugin.
-for p in security-guidance@claude-plugins-official context7@claude-plugins-official; do
+for p in security-guidance@claude-plugins-official context7@claude-plugins-official typescript-lsp@claude-plugins-official; do
   claude plugin install "$p" || echo "AVISO: $p nao instalou (confirmar o nome com /plugin)"
 done
 
@@ -31,5 +31,6 @@ else
   echo "Copiado user/CLAUDE.md para ~/.claude/CLAUDE.md"
 fi
 
+echo "Navegacao de codigo (LSP): instalar o servidor com  npm i -g typescript typescript-language-server"
 echo "Feito. Seguranca extra (Trail of Bits, Semgrep): bash $HERE/install-skills.sh"
 echo "Novo projeto: bash $HERE/new-project.sh ../nome-do-projeto"
