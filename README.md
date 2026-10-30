@@ -42,4 +42,4 @@ Marketplace, plugins, hooks, regras e memória: documentação oficial do Claude
 [skills.sh](https://skills.sh/) e listas da comunidade; contagens são ordem de grandeza, não garantia. Skills de terceiros são
 código: ler antes de instalar na máquina de trabalho.
 
-Validado com `claude plugin validate` (marketplace e plugin). Ainda por testar: instalação ponta a ponta numa máquina limpa.
+Validado com `claude plugin validate` e com uma instalação real do repo privado numa configuração isolada (marketplace, plugin, skills, agentes, hook). Por testar numa máquina limpa: `install.sh` completo e os plugins `security-guidance` e `context7`.
