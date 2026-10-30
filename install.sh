@@ -18,8 +18,8 @@ echo "2/4  Packs: ${PACKS[*]}"
 for p in "${PACKS[@]}"; do claude plugin install "ipremium-$p@ipremium"; done
 
 echo "3/4  Plugins oficiais e de comunidade"
-# Nomes e marketplaces vem de artigos; se algum falhar, instalar a mao com /plugin.
-for p in security-guidance@claude-plugins-official context7@claude-plugins-official typescript-lsp@claude-plugins-official; do
+# Plugins do diretorio oficial (marketplace embutido). Testado: instalam-se pelo nome simples.
+for p in security-guidance context7 typescript-lsp; do
   claude plugin install "$p" || echo "AVISO: $p nao instalou (confirmar o nome com /plugin)"
 done
 

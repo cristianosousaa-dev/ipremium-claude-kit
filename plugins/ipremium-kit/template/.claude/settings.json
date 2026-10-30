@@ -23,7 +23,7 @@
     "ipremium-automation@ipremium": false,
     "ipremium-workflows@ipremium": true,
     "ipremium-languages@ipremium": false,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@anthropic-plugin-directory": true
   },
   "permissions": {
     "deny": [
