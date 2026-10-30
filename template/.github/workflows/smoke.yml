@@ -1,0 +1,27 @@
+name: Production smoke
+
+# Vercel reports each production deploy as a deployment status. When one turns
+# green, check the live site, so a deploy that builds but serves errors shows
+# up as a red run instead of waiting for someone to notice.
+on: deployment_status
+
+permissions: {}
+
+jobs:
+  smoke:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment.environment == 'Production'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check production
+        run: |
+          set -u
+          fail=0
+          check() { # url, expected status
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --retry 3 --retry-delay 10 --retry-all-errors "$1") || { echo "FAIL $1: no answer"; fail=1; return; }
+            if [ "$code" != "$2" ]; then echo "FAIL $1: $code, expected $2"; fail=1; return; fi
+            echo "ok   $1 ($code)"
+          }
+          check https://<dominio>/ 200
+          # add the critical URLs of the project here
+          exit $fail

@@ -1,0 +1,17 @@
+---
+name: new-project
+description: Arrancar um projeto novo da iPremium a partir do template. Usar quando o utilizador pede um site, app ou automacao novos para um cliente, ou diz "novo projeto".
+---
+
+# Novo projeto iPremium
+
+1. **Perguntar so o que falta** (uma mensagem): cliente, o que e, publico, tom, prazo, dados pessoais ou dinheiro envolvidos?
+2. **Copiar o template** (`template/` do repo `claude-kit`) para a pasta do projeto. Substituir os marcadores `<...>` (nome, ORG do GitHub, PROJECT_REF).
+3. **Preencher `PRODUCT.md`** (negocio, publico, tom) e `CLAUDE.md` (stack, comandos). So fatos verificados; o que nao se sabe fica como pergunta.
+4. **`package.json`**: garantir os scripts `lint`, `typecheck`, `test`, `build` e `verify` (`npm run lint && npm run typecheck && npm test && npm run build`).
+5. **Contas do cliente** (checklist, o humano cria): repo na organizacao GitHub da empresa, projeto Vercel, projeto Supabase (regiao UE), dominio no Cloudflare, Sentry, Resend. MFA em todos. Segredos so em variaveis de ambiente da Vercel e no gestor de passwords, nunca no repo nem no chat.
+6. **ADR 0001** com a decisao de arquitetura principal (copiar `docs/adr/0000-template.md`).
+7. **Primeiro commit** num ramo, PR, CI verde. Protecao do ramo `main` no GitHub.
+8. Se houver dados pessoais ou dinheiro: criar `docs/modelo-ameacas.md` antes de escrever funcionalidades.
+
+Nao instalar dependencias nem criar ficheiros que o projeto nao precise ja.

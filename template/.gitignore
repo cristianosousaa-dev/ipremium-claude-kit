@@ -1,0 +1,9 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+test-results/
+playwright-report/
+# Mapa do codigo, reconstroi-se de graca com `graphify update .`
+graphify-out/

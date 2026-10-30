@@ -1,0 +1,23 @@
+{
+  "extraKnownMarketplaces": {
+    "ipremium": {
+      "source": { "source": "github", "repo": "cristianosousaa-dev/ipremium-claude-kit" }
+    }
+  },
+  "enabledPlugins": { "ipremium-kit@ipremium": true },
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Read(./.env.*.local)",
+      "Read(./.env.production)",
+      "Read(./secrets/**)",
+      "Edit(./secrets/**)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(npx supabase *)",
+      "Bash(vercel *)"
+    ]
+  }
+}

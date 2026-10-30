@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ipremium",
+  "description": "Kit Claude Code da iPremium: skills, agentes e regras para todos os projetos.",
+  "owner": { "name": "iPremium" },
+  "plugins": [
+    {
+      "name": "ipremium-kit",
+      "description": "Processo iPremium: novo projeto, definition of done, release, revisores.",
+      "source": "./plugins/ipremium-kit",
+      "category": "productivity"
+    }
+  ]
+}

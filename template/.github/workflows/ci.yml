@@ -1,0 +1,41 @@
+name: CI
+
+# Quality gate on every push to main and every pull request. Same checks as
+# `npm run verify` locally, plus secret scan and dependency audit.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Lint, types, tests, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Secret scan
+        run: node scripts/scan-secrets.mjs
+      # Only what ships, only high/critical, so a moderate advisory in a dev tool does not block a deploy.
+      - name: Dependency audit
+        run: npm audit --omit=dev --audit-level=high
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - name: Production build
+        run: npm run build
+        env:
+          # Dummy public values so the build compiles without real secrets.
+          NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-dummy-anon-key
