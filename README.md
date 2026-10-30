@@ -19,6 +19,10 @@ git clone https://github.com/cristianosousaa-dev/ipremium-claude-kit && bash ipr
 Repo privado: ter `gh auth login` feito. Ao mudar para a organização da empresa, passar o novo `org/repo` ao `install.sh`
 e a `extraKnownMarketplaces` em `plugins/ipremium-kit/template/.claude/settings.json`.
 
+## Planeamento obrigatório
+
+Cada projeto criado com `new-project.sh` traz um portão: o hook `plan-gate` não deixa escrever código enquanto não existir `docs/plan/APPROVED.md`. A skill `kickoff` conduz o planeamento (uma ronda de perguntas com respostas recomendadas, plano em 9 ficheiros (inclui segurança e privacidade, e testes e qualidade), revisão por agentes em paralelo, aprovação explícita). Só projetos com o ficheiro `.claude/plan-gate` ficam sujeitos; apagá-lo desliga o portão.
+
 ## Projeto novo
 ```bash
 bash new-project.sh ../cliente-projeto

@@ -3,6 +3,11 @@
 > Cabeça (porquê e princípios), tronco (arquitetura e stack), membros (como se faz).
 > Mantém-se abaixo de 200 linhas. O pormenor vive em `.claude/rules/` (carrega só quando se mexe nesses ficheiros), em skills e em `docs/`.
 
+## FASE 0 — planear antes de construir
+Neste projeto **não se escreve código antes de existir `docs/plan/APPROVED.md`** (o hook `plan-gate` bloqueia). Pedir a skill `kickoff`: uma ronda de perguntas e o plano em `docs/plan/` (brief, stack, UX/UI, arquitetura e dados, **segurança e privacidade, testes e qualidade**, funcionalidades, automações, entrega e operações), revisto por agentes (arquitetura, segurança, acessibilidade, base de dados, testes, desempenho) e só aprovado com a confirmação explícita do utilizador. Alterações de âmbito, custo, stack ou segurança voltam ao plano (`docs/plan/CHANGES.md`).
+
+**Metodologia, igual em todos os projetos:** plano aprovado, depois fatias verticais. Em cada fatia: testes primeiro (`tdd`), implementação mínima, `definition-of-done`, revisores do que foi tocado, PR com CI verde, `release`.
+
 ## CABEÇA — identidade e princípios
 
 **O que é:** <uma frase: produto, cliente, público, tom>. Detalhe em `PRODUCT.md`.
