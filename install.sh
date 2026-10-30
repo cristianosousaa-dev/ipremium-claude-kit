@@ -1,26 +1,27 @@
 #!/usr/bin/env bash
 # Instala o kit iPremium numa maquina nova (Mac ou Linux; no Windows usar Git Bash).
 # Requer: Claude Code (`claude`), Node (`npx`) e acesso ao repo privado (gh auth login).
-# Uso: bash install.sh [org/repo]
+# Uso: bash install.sh [org/repo] [packs...]      ex.: bash install.sh cristianosousaa-dev/ipremium-claude-kit web data
+# Por defeito instala: kit web data. Opcionais: integrations (Stripe, Resend, Sentry...), automation (n8n).
 set -euo pipefail
 
-REPO="${1:-cristianosousaa-dev/ipremium-claude-kit}"
+REPO="${1:-cristianosousaa-dev/ipremium-claude-kit}"; shift || true
+PACKS=("$@"); [ ${#PACKS[@]} -eq 0 ] && PACKS=(kit web data)
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 command -v claude >/dev/null || { echo "claude nao encontrado: instalar o Claude Code primeiro."; exit 1; }
 
-echo "1/4  Plugin iPremium (skills, agentes, hook de seguranca)"
+echo "1/4  Marketplace iPremium"
 claude plugin marketplace add "$REPO"
-claude plugin install ipremium-kit@ipremium
 
-echo "2/4  Plugins oficiais e de comunidade"
-# Nomes e marketplaces vem das fontes citadas no README; se algum falhar, instalar a mao com /plugin.
+echo "2/4  Packs: ${PACKS[*]}"
+for p in "${PACKS[@]}"; do claude plugin install "ipremium-$p@ipremium"; done
+
+echo "3/4  Plugins oficiais e de comunidade"
+# Nomes e marketplaces vem de artigos; se algum falhar, instalar a mao com /plugin.
 for p in security-guidance@claude-plugins-official context7@claude-plugins-official; do
   claude plugin install "$p" || echo "AVISO: $p nao instalou (confirmar o nome com /plugin)"
 done
-
-echo "3/4  Skills de terceiros (grupo base)"
-bash "$HERE/install-skills.sh" base
 
 echo "4/4  Regras globais"
 if [ -f "$HOME/.claude/CLAUDE.md" ]; then
@@ -30,4 +31,5 @@ else
   echo "Copiado user/CLAUDE.md para ~/.claude/CLAUDE.md"
 fi
 
-echo "Feito. Novo projeto: bash $HERE/new-project.sh ../nome-do-projeto"
+echo "Feito. Seguranca extra (Trail of Bits, Semgrep): bash $HERE/install-skills.sh"
+echo "Novo projeto: bash $HERE/new-project.sh ../nome-do-projeto"

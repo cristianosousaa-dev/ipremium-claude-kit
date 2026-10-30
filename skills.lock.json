@@ -1,0 +1,23 @@
+{
+  "mattpocock/skills": "a496f5513d4a4cf889bc48e189e579f4b0bdf6aa",
+  "obra/superpowers": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b",
+  "addyosmani/agent-skills": "eb07f19f52c2669f2364897aaa293e2aaddd7b1c",
+  "affaan-m/ecc": "b38be6a7f6350964d59328b52f0624e1d1d552d1",
+  "github/awesome-copilot": "5269f7ea2d6c3a9bfda5ed878b6726cf509121fd",
+  "agamm/claude-code-owasp": "8ac7965caa212b4a850aff8d3df0081ab3fa9eed",
+  "vercel-labs/agent-skills": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+  "wshobson/agents": "0874a27b17a22e2b7c2e2bcd725768e0803cad06",
+  "shadcn-ui/ui": "b8d7baa15b1dca5716f13153e63795fc3d741f6b",
+  "addyosmani/web-quality-skills": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+  "coreyhaines31/marketingskills": "820ad2c1c0ac4cc350158bd7912c753681a7d173",
+  "currents-dev/playwright-best-practices-skill": "283d5cbc5d11aac1abda058b16ad22c317d54dc0",
+  "anthropics/skills": "ca45fc496a3436251f191354091d557da31c15b5",
+  "cloudflare/skills": "ed2d6ba89033ba8015591005ed9382cef550417f",
+  "supabase/agent-skills": "c9be0e931b7930f7d02126d04774d904c381e7d7",
+  "stripe/ai": "bb4cf23be76d7073ad9560730335afedb7e04a5f",
+  "resend/resend-skills": "b2ae7b1798b70134faf679f35fc05b4331462988",
+  "resend/react-email": "99548d917633daeaddf049512448538607d47432",
+  "resend/email-best-practices": "cf5438cf10970d715dd204de721ffc89869d8f6d",
+  "getsentry/sentry-for-ai": "80642456253f2fcd529a38d9ac82f299e80dc89c",
+  "czlonkowski/n8n-skills": "e037563e101749e630e6688d121d04529fe6ee7b"
+}

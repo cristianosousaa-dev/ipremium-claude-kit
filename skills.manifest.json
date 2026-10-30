@@ -1,0 +1,214 @@
+{
+  "packs": {
+    "core": [
+      {
+        "repo": "mattpocock/skills",
+        "skills": [
+          "to-spec",
+          "codebase-design",
+          "code-review",
+          "diagnosing-bugs",
+          "tdd",
+          "grill-me"
+        ]
+      },
+      {
+        "repo": "obra/superpowers",
+        "skills": [
+          "systematic-debugging",
+          "verification-before-completion",
+          "brainstorming",
+          "requesting-code-review",
+          "receiving-code-review"
+        ]
+      },
+      {
+        "repo": "addyosmani/agent-skills",
+        "skills": [
+          "planning-and-task-breakdown",
+          "git-workflow-and-versioning"
+        ]
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "skills": [
+          "architecture-decision-records",
+          "security-review",
+          "search-first",
+          "context-budget",
+          "strategic-compact",
+          "error-handling"
+        ]
+      },
+      {
+        "repo": "github/awesome-copilot",
+        "skills": [
+          "secret-scanning"
+        ]
+      },
+      {
+        "repo": "agamm/claude-code-owasp",
+        "skills": [
+          "owasp-security"
+        ]
+      }
+    ],
+    "web": [
+      {
+        "repo": "vercel-labs/agent-skills",
+        "skills": [
+          "vercel-react-best-practices",
+          "web-design-guidelines"
+        ]
+      },
+      {
+        "repo": "wshobson/agents",
+        "skills": [
+          "nextjs-app-router-patterns",
+          "tailwind-design-system",
+          "typescript-advanced-types"
+        ]
+      },
+      {
+        "repo": "shadcn-ui/ui",
+        "skills": [
+          "shadcn"
+        ]
+      },
+      {
+        "repo": "addyosmani/web-quality-skills",
+        "skills": [
+          "seo",
+          "performance",
+          "accessibility",
+          "core-web-vitals",
+          "best-practices",
+          "web-quality-audit"
+        ]
+      },
+      {
+        "repo": "coreyhaines31/marketingskills",
+        "skills": [
+          "seo-audit",
+          "ai-seo",
+          "site-architecture",
+          "copywriting"
+        ]
+      },
+      {
+        "repo": "currents-dev/playwright-best-practices-skill",
+        "skills": [
+          "playwright-best-practices"
+        ]
+      },
+      {
+        "repo": "anthropics/skills",
+        "skills": [
+          "webapp-testing"
+        ]
+      },
+      {
+        "repo": "cloudflare/skills",
+        "skills": [
+          "web-perf"
+        ]
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "skills": [
+          "frontend-patterns",
+          "frontend-a11y",
+          "accessibility",
+          "react-performance",
+          "react-testing",
+          "e2e-testing"
+        ]
+      }
+    ],
+    "data": [
+      {
+        "repo": "supabase/agent-skills",
+        "skills": [
+          "supabase",
+          "supabase-postgres-best-practices"
+        ]
+      },
+      {
+        "repo": "affaan-m/ecc",
+        "skills": [
+          "postgres-patterns",
+          "database-migrations",
+          "api-design",
+          "backend-patterns"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "repo": "stripe/ai",
+        "skills": [
+          "stripe-best-practices"
+        ]
+      },
+      {
+        "repo": "wshobson/agents",
+        "skills": [
+          "stripe-integration"
+        ]
+      },
+      {
+        "repo": "resend/resend-skills",
+        "skills": [
+          "resend"
+        ]
+      },
+      {
+        "repo": "resend/react-email",
+        "skills": [
+          "react-email"
+        ]
+      },
+      {
+        "repo": "resend/email-best-practices",
+        "skills": [
+          "email-best-practices"
+        ]
+      },
+      {
+        "repo": "getsentry/sentry-for-ai",
+        "skills": [
+          "sentry-nextjs-sdk",
+          "sentry-sdk-setup"
+        ]
+      },
+      {
+        "repo": "cloudflare/skills",
+        "skills": [
+          "cloudflare",
+          "wrangler"
+        ]
+      },
+      {
+        "repo": "vercel-labs/agent-skills",
+        "skills": [
+          "deploy-to-vercel",
+          "vercel-cli-with-tokens"
+        ]
+      }
+    ],
+    "automation": [
+      {
+        "repo": "czlonkowski/n8n-skills",
+        "skills": [
+          "n8n-workflow-patterns",
+          "n8n-mcp-tools-expert",
+          "n8n-node-configuration",
+          "n8n-validation-expert",
+          "n8n-expression-syntax",
+          "n8n-code-javascript",
+          "n8n-code-python"
+        ]
+      }
+    ]
+  }
+}

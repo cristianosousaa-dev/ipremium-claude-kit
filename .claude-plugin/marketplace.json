@@ -2,12 +2,38 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "ipremium",
   "description": "Kit Claude Code da iPremium: skills, agentes e regras para todos os projetos.",
-  "owner": { "name": "iPremium" },
+  "owner": {
+    "name": "iPremium"
+  },
   "plugins": [
     {
       "name": "ipremium-kit",
-      "description": "Processo iPremium: novo projeto, definition of done, release, revisores.",
+      "description": "Base sempre ativa: processo iPremium, revisores, hook de seguranca, planeamento, debugging, TDD, seguranca e contexto.",
       "source": "./plugins/ipremium-kit",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-web",
+      "description": "Web e interface: Next/React, UI/UX, acessibilidade, SEO e AEO, performance, testes de browser.",
+      "source": "./plugins/ipremium-web",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-data",
+      "description": "Dados: Supabase, Postgres, migracoes, desenho de API.",
+      "source": "./plugins/ipremium-data",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-integrations",
+      "description": "Integracoes: Stripe, Resend e react-email, Sentry, Cloudflare, Vercel.",
+      "source": "./plugins/ipremium-integrations",
+      "category": "productivity"
+    },
+    {
+      "name": "ipremium-automation",
+      "description": "Automacao: n8n (workflows, nos, validacao, expressoes).",
+      "source": "./plugins/ipremium-automation",
       "category": "productivity"
     }
   ]

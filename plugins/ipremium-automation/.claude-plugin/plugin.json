@@ -1,0 +1,8 @@
+{
+  "name": "ipremium-automation",
+  "version": "0.1.0",
+  "description": "Automacao: n8n (workflows, nos, validacao, expressoes).",
+  "author": {
+    "name": "iPremium"
+  }
+}

@@ -33,10 +33,12 @@ Princípios, por ordem de prioridade:
 
 ## MEMBROS — como se trabalha
 
+Packs ligados (`.claude/settings.json`): `ipremium-kit` (sempre), `ipremium-web`, `ipremium-data`. Ligar `ipremium-integrations` (Stripe, Resend, Sentry, Cloudflare, Vercel) ou `ipremium-automation` (n8n) só quando o projeto os usa: cada skill ligada custa contexto.
+
 | Quando | Usar |
 |---|---|
 | Projeto ou funcionalidade nova | skills `brainstorming`/`to-spec`, depois `new-project` |
-| Decisão de arquitetura | skill `architecture-decision-records`, agente `ecc:architect` se existir |
+| Decisão de arquitetura | skills `codebase-design` e `architecture-decision-records` (ADR em `docs/adr/`) |
 | Antes de escrever código | `search-first` (já existe no projeto ou numa biblioteca instalada?) |
 | Bug | `systematic-debugging`: causa raiz antes da correção |
 | Lógica nova | `tdd` |

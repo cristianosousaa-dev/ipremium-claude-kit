@@ -4,7 +4,13 @@
       "source": { "source": "github", "repo": "cristianosousaa-dev/ipremium-claude-kit" }
     }
   },
-  "enabledPlugins": { "ipremium-kit@ipremium": true },
+  "enabledPlugins": {
+    "ipremium-kit@ipremium": true,
+    "ipremium-web@ipremium": true,
+    "ipremium-data@ipremium": true,
+    "ipremium-integrations@ipremium": false,
+    "ipremium-automation@ipremium": false
+  },
   "permissions": {
     "deny": [
       "Read(./.env)",
