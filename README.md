@@ -31,7 +31,7 @@ Marketplace com 15 plugins. Cada projeto liga só os que usa (cada skill, agente
 
 | Plugin | Conteúdo |
 |---|---|
-| `ipremium-kit` (sempre) | **27 agentes do ECC** (security-reviewer, code-reviewer, database-reviewer, react-reviewer, typescript-reviewer, silent-failure-hunter, a11y-architect, seo-specialist, performance-optimizer, e2e-runner, architect, planner, tdd-guide, build resolvers...), mais `db-guard` e `qa-browser` próprios; 36 skills (processo iPremium, planeamento, debugging, TDD, code review, segurança, segredos, ADRs, contexto); hook anti-destruição |
+| `ipremium-kit` (sempre) | **27 agentes do ECC** (security-reviewer, code-reviewer, database-reviewer, react-reviewer, typescript-reviewer, silent-failure-hunter, a11y-architect, seo-specialist, performance-optimizer, e2e-runner, architect, planner, tdd-guide, build resolvers...), mais `db-guard` e `qa-browser` próprios; 35 skills (processo iPremium, planeamento, debugging, TDD, code review, segurança, segredos, ADRs, contexto); hook anti-destruição |
 | `ipremium-workflows` | 31 comandos do ECC: `/plan`, `/feature-dev`, `/code-review`, `/build-fix`, `/security-scan`, `/orch-*`, `/prp-*`, `/pr`, `/checkpoint`... |
 | `ipremium-web` | Next/React/Vite, Tailwind, shadcn, TanStack Query, Zod, SEO e AEO, performance, Playwright |
 | `ipremium-design` | skill `design`, a11y, tipografia, motion, microinterações, crítica de UI, UX copy |

@@ -34,7 +34,6 @@ Vendored copies, pinned to the commit shown. Licences in `licenses/`. Do not edi
 | token-budget-advisor | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | deep-research | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | documentation-lookup | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
-| tdd-workflow | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | agent:security-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | agent:code-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |
 | agent:database-reviewer | https://github.com/affaan-m/ecc | b38be6a7f635 | MIT |

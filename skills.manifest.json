@@ -48,8 +48,7 @@
           "ai-regression-testing",
           "token-budget-advisor",
           "deep-research",
-          "documentation-lookup",
-          "tdd-workflow"
+          "documentation-lookup"
         ],
         "agents": [
           "security-reviewer",
