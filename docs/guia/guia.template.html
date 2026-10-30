@@ -104,7 +104,7 @@ td{padding:1.9mm 2mm 1.9mm 0;border-bottom:.5pt solid var(--line);vertical-align
     <li><b>Páginas 6 e 7:</b> ferramentas utilizadas, garantias de qualidade, segurança e continuidade.</li>
     <li><b>Página 8:</b> modelo de inteligência artificial indicado para cada tarefa e tipo de projeto.</li>
     <li><b>Página 9:</b> organização do trabalho remoto.</li>
-    <li><b>Páginas 10 e 11:</b> questões a alinhar na primeira reunião e próximos passos.</li>
+    <li><b>Página 10:</b> questões a alinhar na primeira reunião e próximos passos.</li>
   </ul>
   <div class="box"><div class="l">Nota prévia</div>As práticas descritas constituem uma proposta de trabalho, a validar com a direção na primeira reunião. O documento não inclui preços nem prazos de execução: define método, critérios e responsabilidades.</div>
   <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
@@ -217,7 +217,7 @@ td{padding:1.9mm 2mm 1.9mm 0;border-bottom:.5pt solid var(--line);vertical-align
     <div class="tool"><div class="h"><span class="logo" style="color:#F38020">{{LOGO:cloudflare}}</span><div><b>Cloudflare</b><span class="r">Domínios e proteção</span></div></div><p>Gere os endereços (DNS) e permite acrescentar proteção de tráfego.</p><div class="v"><b>Valor:</b> facilita o controlo e a disponibilidade dos serviços.</div></div>
     <div class="tool"><div class="h"><span class="logo" style="color:#362D59">{{LOGO:sentry}}</span><div><b>Sentry</b><span class="r">Monitorização técnica</span></div></div><p>Regista os erros das aplicações e das interfaces de programação no momento em que ocorrem.</p><div class="v"><b>Valor:</b> acelera a identificação e a correção de incidentes.</div></div>
     <div class="tool"><div class="h"><span class="logo" style="color:#000000">{{LOGO:resend}}</span><div><b>Resend</b><span class="r">E-mail transacional</span></div></div><p>Envia as mensagens automáticas das aplicações: confirmações, avisos e recuperação de conta.</p><div class="v"><b>Valor:</b> assegura notificações e comunicações do sistema.</div></div>
-    <div class="tool"><div class="h"><span class="logo" style="color:#EA4B71">{{LOGO:n8n}}</span><div><b>n8n</b><span class="r">Automações</span></div></div><p>Liga serviços entre si e automatiza tarefas repetitivas, com registo das execuções.</p><div class="v"><b>Valor:</b> reduz o trabalho manual. <span class="tag warn">a confirmar</span></div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#EA4B71">{{LOGO:n8n}}</span><div><b>n8n</b><span class="r">Automações</span></div></div><p>Liga serviços entre si e automatiza tarefas repetitivas, com registo das execuções.</p><div class="v"><b>Valor:</b> reduz o trabalho manual.</div></div>
   </div>
   <h2><span class="k">A</span>Articulação entre as ferramentas</h2>
   <div class="steps">
@@ -227,7 +227,7 @@ td{padding:1.9mm 2mm 1.9mm 0;border-bottom:.5pt solid var(--line);vertical-align
     <div class="s"><b>4 Acompanhamento</b>Sentry, Resend e suporte</div>
   </div>
   <p class="small">O código é guardado no GitHub, verificado pelo GitHub Actions e publicado na Vercel apenas após validação. Este percurso assegura rastreabilidade e reduz as intervenções manuais.</p>
-  <div class="box"><div class="l">Stack de referência, não exclusiva</div>Podem ser adotadas outras soluções, em função dos requisitos, da escala e do orçamento de cada projeto, incluindo alternativas indicadas pelo cliente. A escolha é fundamentada e aprovada sempre que tenha impacto contratual ou financeiro. A utilização do n8n para automações fica sujeita a decisão da direção.</div>
+  <div class="box"><div class="l">Stack de referência, não exclusiva</div>Podem ser adotadas outras soluções, em função dos requisitos, da escala e do orçamento de cada projeto, incluindo alternativas indicadas pelo cliente. A escolha é fundamentada e aprovada sempre que tenha impacto contratual ou financeiro.</div>
   <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
 </section>
 
@@ -326,74 +326,27 @@ td{padding:1.9mm 2mm 1.9mm 0;border-bottom:.5pt solid var(--line);vertical-align
   <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
 </section>
 
-<!-- 10 PERGUNTAS I -->
+<!-- 10 QUESTOES -->
 <section class="page">
   <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
   <div class="eyebrow">03 / Modelos e alinhamento</div>
   <h1>Questões a alinhar na primeira reunião</h1>
-  <p class="lead">As respostas a estas questões determinam como o método é aplicado e evitam hipóteses não confirmadas. Estão organizadas por tema, por ordem de prioridade.</p>
-  <h2><span class="k">1</span>Organização, autonomia e prioridades</h2>
-  <table class="dense q">
-    <tr><td>1</td><td>Quem aprova propostas, alterações de âmbito e despesas recorrentes? Que limite de despesa existe sem aprovação?</td></tr>
-    <tr><td>2</td><td>Que autonomia existe para escolher e contratar serviços técnicos (ferramentas, alojamento, licenças)?</td></tr>
-    <tr><td>3</td><td>A quem se reporta, com que periodicidade e em que formato?</td></tr>
-    <tr><td>4</td><td>Quem recebe os pedidos dos clientes e define a prioridade? Que projetos têm precedência?</td></tr>
-    <tr><td>5</td><td>Quem aprova a entrega e assume a relação com o cliente após a publicação?</td></tr>
+  <p class="lead">As dez questões que mais condicionam a forma como o método é aplicado. As respostas evitam hipóteses não confirmadas e permitem começar o primeiro projeto com as regras claras.</p>
+  <table class="q">
+    <tr><th style="width:8mm">#</th><th style="width:44mm">Tema</th><th>Questão</th></tr>
+    <tr><td>1</td><td><b>Aprovação e autonomia</b></td><td>Quem aprova propostas, alterações de âmbito e despesas recorrentes? Que limite de despesa e que autonomia existem para escolher e contratar serviços técnicos (ferramentas, alojamento, licenças)?</td></tr>
+    <tr><td>2</td><td><b>Reporte e prioridades</b></td><td>A quem se reporta, com que periodicidade e em que formato? Quem recebe os pedidos dos clientes e define a prioridade dos projetos?</td></tr>
+    <tr><td>3</td><td><b>Papel comercial</b></td><td>Que papel se assume nas reuniões comerciais e na elaboração de propostas? Como se definem preços e margens, e como se trata uma alteração de âmbito durante o projeto?</td></tr>
+    <tr><td>4</td><td><b>Conta de trabalho com o Claude</b></td><td>Que plano será contratado, para quantos lugares e com que limites de utilização? O nível máximo (Claude Fable 5.1) pode ser utilizado e como é faturado?</td></tr>
+    <tr><td>5</td><td><b>Titularidade e propriedade</b></td><td>Quem é titular das contas dos projetos (GitHub, Vercel, Supabase, Cloudflare, Sentry, Resend) e quem detém o código e os domínios? A quem pertencem a documentação, os modelos e as ferramentas criados? Que condições se aplicam à saída de um cliente?</td></tr>
+    <tr><td>6</td><td><b>Custos mensais</b></td><td>Quem suporta os custos mensais das ferramentas e como são repercutidos ao cliente? Como se aprovam os custos de inteligência artificial e os excedentes?</td></tr>
+    <tr><td>7</td><td><b>GitHub e n8n</b></td><td>Existe uma organização GitHub da empresa para alojar o método e os repositórios? O n8n será utilizado na nuvem ou auto-alojado, e quem o administra e paga?</td></tr>
+    <tr><td>8</td><td><b>Dados e conformidade</b></td><td>Existe encarregado de proteção de dados e modelo de acordo de tratamento de dados com os clientes? Que dados podem ser tratados por ferramentas de inteligência artificial e que regiões de armazenamento são aceitáveis?</td></tr>
+    <tr><td>9</td><td><b>Produção, suporte e manutenção</b></td><td>Quem autoriza a passagem a produção? Qual o procedimento de suporte e de incidentes, e que serviços ficam abrangidos pela manutenção e quais são cobrados em separado?</td></tr>
+    <tr><td>10</td><td><b>Trabalho remoto</b></td><td>Qual o horário de referência e os tempos de resposta esperados? Que equipamento, acessos e política de segurança se aplicam? Como se organiza a reunião presencial mensal?</td></tr>
   </table>
-  <h2><span class="k">2</span>Clientes, propostas e comercial</h2>
-  <table class="dense q">
-    <tr><td>6</td><td>Qual o perfil de cliente prioritário (startups, PME) e os setores-alvo?</td></tr>
-    <tr><td>7</td><td>Que papel se assume nas reuniões comerciais e na elaboração de propostas? Existem modelos de proposta ou de contrato?</td></tr>
-    <tr><td>8</td><td>Como se definem os preços e as margens, e quem os aprova? Como se trata uma alteração de âmbito durante o projeto?</td></tr>
-    <tr><td>9</td><td>Como se mede o sucesso de um projeto e de uma proposta? Que indicadores devem ser acompanhados?</td></tr>
-    <tr><td>10</td><td>Existem projetos em curso ou código legado a assumir? Em que tecnologias?</td></tr>
-  </table>
-  <h2><span class="k">3</span>Contas, titularidade e custos</h2>
-  <table class="dense q">
-    <tr><td>11</td><td>Que plano de Claude será contratado, para quantos lugares e com que limites de utilização? O nível máximo (Fable) pode ser utilizado e como é faturado?</td></tr>
-    <tr><td>12</td><td>Quem é titular das contas dos projetos (GitHub, Vercel, Supabase, Cloudflare, Sentry, Resend): a iPremium ou o cliente?</td></tr>
-    <tr><td>13</td><td>Quem detém o código, os domínios e as contas de alojamento? Que condições se aplicam à saída de um cliente?</td></tr>
-    <tr><td>14</td><td>Quem suporta os custos mensais das ferramentas e como são repercutidos ao cliente? Como se aprovam custos de IA e excedentes?</td></tr>
-    <tr><td>15</td><td>Existe uma organização GitHub da empresa para alojar o método e os repositórios? Quem a administra?</td></tr>
-    <tr><td>16</td><td>Qual a ferramenta de automação (n8n na nuvem ou auto-alojado) e quem a administra e paga?</td></tr>
-  </table>
-  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
-</section>
-
-<!-- 11 PERGUNTAS II E PROXIMOS PASSOS -->
-<section class="page">
-  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
-  <div class="eyebrow">03 / Modelos e alinhamento</div>
-  <h1>Questões a alinhar (continuação) e próximos passos</h1>
-  <h2><span class="k">4</span>Segurança, dados e conformidade</h2>
-  <table class="dense q">
-    <tr><td>17</td><td>Existe encarregado de proteção de dados e modelo de acordo de tratamento de dados com os clientes?</td></tr>
-    <tr><td>18</td><td>Que subcontratantes e regiões de armazenamento de dados são aceitáveis? Que dados de clientes podem ser tratados por ferramentas de inteligência artificial?</td></tr>
-    <tr><td>19</td><td>Existe política de gestão de segredos, gestor de palavras-passe e autenticação multifator obrigatória?</td></tr>
-    <tr><td>20</td><td>Que requisitos de acessibilidade e de proteção do consumidor se aplicam aos projetos dos clientes?</td></tr>
-  </table>
-  <h2><span class="k">5</span>Processo, qualidade e suporte</h2>
-  <table class="dense q">
-    <tr><td>21</td><td>Existe ambiente de testes por cliente? Quem autoriza a passagem a produção?</td></tr>
-    <tr><td>22</td><td>Qual o procedimento de suporte e de incidentes? Que tempos de resposta se comunicam aos clientes?</td></tr>
-    <tr><td>23</td><td>Que serviços ficam incluídos na manutenção e quais são cobrados em separado?</td></tr>
-    <tr><td>24</td><td>Que critérios de qualidade mínimos (desempenho, acessibilidade, testes) são exigidos antes da entrega?</td></tr>
-  </table>
-  <h2><span class="k">6</span>Trabalho remoto</h2>
-  <table class="dense q">
-    <tr><td>25</td><td>Qual o horário de referência e os tempos de resposta esperados? Quem assegura incidentes fora de horas?</td></tr>
-    <tr><td>26</td><td>Que canais de comunicação e que ferramenta de gestão de tarefas a empresa utiliza?</td></tr>
-    <tr><td>27</td><td>Que equipamento e que acessos são fornecidos, e que política de segurança e de rede se aplica?</td></tr>
-    <tr><td>28</td><td>Como se organiza a presença mensal no escritório e que agenda se pretende?</td></tr>
-  </table>
-  <h2><span class="k">7</span>Propriedade intelectual, formação e primeiro projeto</h2>
-  <table class="dense q">
-    <tr><td>29</td><td>A quem pertence a documentação, os modelos e as ferramentas criados no âmbito do trabalho? Que regras se aplicam à reutilização de componentes entre projetos?</td></tr>
-    <tr><td>30</td><td>Que formação e acompanhamento estão previstos, nomeadamente para utilização segura de inteligência artificial?</td></tr>
-    <tr><td>31</td><td>Qual o primeiro projeto para aplicar o método, quem é o responsável do lado do cliente e como se avalia o resultado no final?</td></tr>
-  </table>
-  <h2><span class="k">B</span>Próximos passos</h2>
-  <p>Formalizar as decisões acima, preparar as contas e os modelos de projeto, aplicar o método num primeiro caso real, rever o resultado e a escolha do modelo de IA por tarefa, e normalizar a operação. Esta proposta não impõe prazos.</p>
+  <h2><span class="k">A</span>Próximos passos</h2>
+  <p>Formalizar as decisões acima, preparar as contas e os modelos de projeto, aplicar o método num primeiro caso real, rever o resultado e a escolha do modelo de inteligência artificial por tarefa, e normalizar a operação. Esta proposta não impõe prazos.</p>
   <p class="small muted"><b>Fontes:</b> documentação oficial da Anthropic e do Claude Code (modelos e configuração), consultada a 30 de outubro de 2026; páginas oficiais dos fornecedores das ferramentas. Logótipos: Simple Icons (CC0); as marcas pertencem aos respetivos titulares.</p>
   <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
 </section>

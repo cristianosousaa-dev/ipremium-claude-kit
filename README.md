@@ -25,7 +25,7 @@ Cada projeto criado com `new-project.sh` traz um portão: o hook `plan-gate` nã
 
 ## Documento para a direção
 
-`docs/iPremium_Metodologia_IA.pdf` (11 páginas, sem preços nem prazos): metodologia, escolha de arquitetura e stack, ferramentas, garantias, modelo de IA por tarefa e por tipo de projeto, trabalho remoto e questões para a primeira reunião. Fonte em `docs/guia/` (`node docs/guia/build.mjs` regenera o PDF; logótipos em `docs/guia/logos/`, Simple Icons, CC0).
+`docs/iPremium_Metodologia_IA.pdf` (10 páginas, sem preços nem prazos): metodologia, escolha de arquitetura e stack, ferramentas, garantias, modelo de IA por tarefa e por tipo de projeto, trabalho remoto e dez questões para a primeira reunião. Fonte em `docs/guia/` (`node docs/guia/build.mjs` regenera o PDF; logótipos em `docs/guia/logos/`, Simple Icons, CC0).
 
 ## Projeto novo
 ```bash
