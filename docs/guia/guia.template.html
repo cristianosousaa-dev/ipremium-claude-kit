@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<title>iPremium: desenvolvimento assistido por inteligência artificial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=block" rel="stylesheet">
+<style>
+:root{--ink:#15202B;--ink2:#2B3A48;--accent:#2F4B66;--soft:#E9EEF3;--muted:#6B7886;--line:#DCE1E6;--bg:#F5F7F9;--ok:#2E6B4F;--warn:#8A5A12}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:Inter,"Segoe UI",system-ui,sans-serif;font-size:9.2pt;line-height:1.5;color:var(--ink);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;padding:15mm 19mm 12mm;display:flex;flex-direction:column;page-break-after:always;overflow:hidden}
+.page:last-child{page-break-after:auto}
+.top{display:flex;justify-content:space-between;align-items:baseline;border-bottom:.5pt solid var(--line);padding-bottom:3mm}
+.brand{font-weight:800;font-size:10.5pt}
+.crumb{font-size:6.8pt;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{margin-top:8mm;font-size:7.4pt;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:22pt;line-height:1.12;font-weight:800;letter-spacing:-.012em;margin:1.8mm 0 3mm}
+.lead{font-size:10pt;color:var(--ink2);margin:0 0 4mm;max-width:158mm}
+h2{display:flex;gap:3mm;align-items:baseline;font-size:10.6pt;font-weight:700;margin:5.5mm 0 2.2mm;padding-bottom:1.5mm;border-bottom:.5pt solid var(--line)}
+h2 .k{font-size:7.2pt;font-weight:800;color:var(--accent);letter-spacing:.04em}
+p{margin:0 0 2.4mm}
+ul{margin:0 0 2.4mm;padding-left:4.4mm}li{margin:0 0 1.2mm}
+table{border-collapse:collapse;width:100%;font-size:8.3pt}
+th{text-align:left;font-size:6.6pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border-bottom:.8pt solid var(--ink);padding:1.4mm 2mm 1.4mm 0}
+td{padding:1.9mm 2mm 1.9mm 0;border-bottom:.5pt solid var(--line);vertical-align:top}
+th.n,td.n{text-align:right;padding-right:3mm}
+.muted{color:var(--muted)}.small{font-size:7.4pt}
+.tag{display:inline-block;font-size:6.3pt;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.2mm 1.7mm;border-radius:.8mm;background:var(--soft);color:var(--accent);white-space:nowrap}
+.tag.ok{background:#E3F0E9;color:var(--ok)}.tag.warn{background:#F6ECDB;color:var(--warn)}
+.tag.rap{background:#E3F0E9;color:var(--ok)}.tag.equ{background:var(--soft);color:var(--accent)}.tag.ava{background:#E6E3F3;color:#4B3F8F}.tag.max{background:#F6E3E3;color:#8F3F3F}
+.box{border-left:1.2mm solid var(--accent);background:var(--bg);padding:3.2mm 4.2mm;margin:3mm 0}
+.box .l{font-size:6.6pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1mm}
+.grid{display:grid;gap:4mm}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}
+.card{border-top:.8pt solid var(--ink);padding-top:2mm}.card b{display:block;font-size:9.6pt;margin-bottom:.8mm}.card span{font-size:8.3pt;color:var(--ink2)}
+.foot{margin-top:auto;border-top:.5pt solid var(--line);padding-top:2.6mm;display:flex;justify-content:space-between;font-size:6.6pt;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.foot .pg{font-weight:700;color:var(--accent)}
+.cover .big{margin-top:36mm;font-size:6.8pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.cover h1{font-size:33pt;line-height:1.1;margin:5mm 0 7mm;max-width:150mm}
+.cover .sub{font-size:10.8pt;color:var(--ink2);max-width:128mm;line-height:1.5}
+.cover .cols{margin-top:22mm;border-top:.5pt solid var(--line);padding-top:7mm}
+.cover .cols b{display:block;font-size:8pt;letter-spacing:.08em;color:var(--accent);text-transform:uppercase}.cover .cols span{font-size:7.6pt;color:var(--muted)}
+.cover .princ{margin-top:12mm;border-top:.5pt solid var(--line);border-bottom:.5pt solid var(--line);padding:7mm 8mm}
+.cover .princ .l{font-size:6.8pt;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:2mm}
+.cover .princ p{font-size:9.8pt;line-height:1.55;margin:0}
+.steps{display:flex;gap:2mm;margin:2mm 0 3mm}.steps .s{flex:1;border:.6pt solid var(--line);padding:2.6mm 2.8mm;font-size:8pt}.steps .s b{display:block;font-size:6.6pt;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);margin-bottom:1mm}.steps .a{align-self:center;color:var(--accent);font-weight:700}
+.price td:nth-child(3){font-weight:600}
+.pricesum td:nth-child(2){font-weight:600}
+.dense{font-size:7.9pt}.dense td{padding:1.1mm 2mm 1.1mm 0}.dense th{padding:1mm 2mm 1mm 0}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:4.2mm 5mm;margin-top:1mm}
+.tool{border-top:.8pt solid var(--ink);padding-top:2.4mm}
+.tool .h{display:flex;align-items:center;gap:2.6mm;margin-bottom:1.8mm}
+.logo{display:inline-flex;width:9.5mm;height:9.5mm;flex:none;align-items:center;justify-content:center}
+.logo svg{width:100%;height:100%;fill:currentColor}
+.tool b{font-size:9.8pt;display:block;line-height:1.1}
+.tool .r{font-size:6.3pt;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.tool p{font-size:8pt;margin:0 0 1.4mm;color:var(--ink2);line-height:1.42}
+.tool .v{font-size:7.4pt;color:var(--muted)}.tool .v b{display:inline;font-size:7.4pt;color:var(--accent)}
+</style>
+</head>
+<body>
+
+<!-- 1 CAPA -->
+<section class="page cover">
+  <div class="top"><span class="brand">iPREMIUM</span></div>
+  <div class="big">Documento para a direção</div>
+  <h1>Desenvolvimento assistido por inteligência artificial</h1>
+  <div class="sub">Método de trabalho, mecanismos de garantia de qualidade e referências de preço para a orçamentação de projetos.</div>
+  <div class="cols grid g3">
+    <div><b>01 Método</b><span>Organização e condução dos projetos</span></div>
+    <div><b>02 Garantias</b><span>Qualidade, segurança e continuidade</span></div>
+    <div><b>03 Orçamentação</b><span>Referências de preço por tipo de projeto</span></div>
+  </div>
+  <div class="princ"><div class="l">Princípio orientador</div><p>O método estabelece uma base de trabalho única, documentada e escalável: planeamento aprovado em primeiro lugar, seguido de desenvolvimento em partes pequenas e verificadas. A inteligência artificial reforça a produtividade; as decisões comerciais e a responsabilidade técnica permanecem com pessoas.</p></div>
+  <div class="foot"><span>Documento de trabalho · Outubro de 2026</span><span></span></div>
+</section>
+
+<!-- 2 RESUMO -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">00 / Introdução</div>
+  <h1>Enquadramento</h1>
+  <p class="lead">A iPremium utiliza assistentes de inteligência artificial no desenho, no desenvolvimento e na verificação de websites, aplicações e automações. O fator distintivo não é a ferramenta, mas o método, que é o mesmo em todos os projetos.</p>
+  <div class="grid g2" style="margin-top:2mm">
+    <div class="card"><b>Previsibilidade</b><span>O plano, elaborado antes do desenvolvimento, antecipa as causas mais frequentes de desvio: tecnologia, ecrãs, segurança, testes, integrações e custos.</span></div>
+    <div class="card"><b>Qualidade consistente</b><span>As mesmas verificações aplicam-se a todos os projetos, executadas por assistentes especializados e validadas por pessoas.</span></div>
+    <div class="card"><b>Eficiência operacional</b><span>A inteligência artificial assegura o trabalho repetitivo; a equipa concentra-se nas decisões que exigem critério.</span></div>
+    <div class="card"><b>Controlo de custos</b><span>Utiliza-se o modelo mais simples que resolve cada tarefa, reservando os mais avançados para as situações em que acrescentam valor.</span></div>
+  </div>
+  <h2><span class="k">A</span>Ciclo de um projeto</h2>
+  <div class="steps">
+    <div class="s"><b>1 Levantamento</b>Perguntas ao cliente</div><div class="a">›</div>
+    <div class="s"><b>2 Plano</b>Decisões registadas por escrito</div><div class="a">›</div>
+    <div class="s"><b>3 Aprovação</b>Validação por uma pessoa</div><div class="a">›</div>
+    <div class="s"><b>4 Desenvolvimento</b>Partes pequenas e verificadas</div><div class="a">›</div>
+    <div class="s"><b>5 Entrega</b>Testada e documentada</div>
+  </div>
+  <h2><span class="k">B</span>Conteúdo do documento</h2>
+  <ul>
+    <li><b>Páginas 3 e 4:</b> método de trabalho, fases do projeto e plano técnico prévio ao desenvolvimento.</li>
+    <li><b>Página 5:</b> ecossistema tecnológico e função de cada ferramenta.</li>
+    <li><b>Páginas 6 e 7:</b> garantias de qualidade e segurança, e critério de seleção do modelo de inteligência artificial.</li>
+    <li><b>Páginas 8 a 13:</b> referências de preço por tipo e dimensão de projeto, e custos recorrentes.</li>
+    <li><b>Página 14:</b> responsabilidades, decisões a acordar e fontes.</li>
+  </ul>
+  <div class="box"><div class="l">Nota prévia</div>As referências de preço incluídas neste documento resultam de pesquisa de mercado e não constituem preços praticados pela iPremium. Servem de ponto de partida para as propostas; a decisão final compete à direção.</div>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 3 METODO -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">01 / Método</div>
+  <h1>Planeamento antes do desenvolvimento</h1>
+  <p class="lead">A maioria dos desvios de prazo e de custo decorre de decisões tomadas tardiamente: tecnologia inadequada, ecrãs omitidos, segurança acrescentada a posteriori, âmbito em expansão. Por essa razão, o desenvolvimento só se inicia após a aprovação do plano escrito.</p>
+  <h2><span class="k">A</span>As quatro fases de cada projeto</h2>
+  <table>
+    <tr><th style="width:38mm">Fase</th><th>Descrição</th><th style="width:44mm">Responsável pela decisão</th></tr>
+    <tr><td><b>1 Planeamento técnico</b></td><td>Sessão de levantamento com perguntas objetivas e respostas sugeridas, da qual resulta o plano completo do projeto. O plano é revisto por assistentes especializados em arquitetura, segurança, acessibilidade, dados e testes.</td><td>Cliente e coordenação técnica aprovam o plano</td></tr>
+    <tr><td><b>2 Desenvolvimento controlado</b></td><td>Construção por partes pequenas e entregáveis. Cada parte é desenvolvida com testes, verificada e revista antes de se prosseguir.</td><td>Coordenação técnica revê cada parte</td></tr>
+    <tr><td><b>3 Testes e aprovação</b></td><td>Apresentação de uma versão de testes ao cliente, acompanhada de verificações automáticas de funcionamento, segurança, acessibilidade e desempenho.</td><td>Cliente valida o âmbito contratado</td></tr>
+    <tr><td><b>4 Publicação e acompanhamento</b></td><td>Publicação com mecanismo de reversão, monitorização e documentação de entrega que permite ao cliente dar continuidade ao projeto.</td><td>Coordenação técnica autoriza a publicação</td></tr>
+  </table>
+  <h2><span class="k">B</span>Controlo de alterações</h2>
+  <p>Qualquer alteração ao âmbito, ao custo, à tecnologia ou ao modelo de segurança retorna ao plano, é registada e só prossegue após nova aprovação. Assegura-se, assim, a correspondência permanente entre o que foi contratado e o que está a ser desenvolvido.</p>
+  <div class="box"><div class="l">Mecanismo de controlo</div>O cumprimento não depende de procedimento manual: o ambiente de trabalho está configurado para <b>impedir a escrita do código do projeto enquanto o plano não tiver sido aprovado por uma pessoa</b>.</div>
+  <h2><span class="k">C</span>Entregáveis</h2>
+  <ul>
+    <li>O projeto em funcionamento, testado, acompanhado do registo das verificações efetuadas.</li>
+    <li>Documentação de continuidade: localização de todos os componentes, titularidade de cada conta, procedimento de reversão e custo de manutenção.</li>
+    <li>Indicação clara do que se encontra abrangido pela manutenção e do que é cobrado em separado.</li>
+  </ul>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 4 PLANO -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">01 / Método</div>
+  <h1>Âmbito do plano técnico</h1>
+  <p class="lead">O plano é composto por nove capítulos, concisos e legíveis por quem não tem formação técnica. Cada capítulo responde a uma questão que, se permanecer em aberto, tende a gerar custos numa fase posterior.</p>
+  <table>
+    <tr><th style="width:8mm">#</th><th style="width:46mm">Capítulo</th><th>Questão a que responde</th></tr>
+    <tr><td>1</td><td><b>Objetivo e âmbito</b></td><td>Que problema se resolve, para quem, como se mede o sucesso e o que fica excluído?</td></tr>
+    <tr><td>2</td><td><b>Tecnologia e custos</b></td><td>Que ferramentas são utilizadas, com que justificação e a que custo mensal? Os valores são confirmados nas páginas dos fornecedores, nunca de memória.</td></tr>
+    <tr><td>3</td><td><b>Design e experiência</b></td><td>Que ecrãs existem, como se navega, qual a imagem do projeto e que comportamento têm os estados de erro e de ausência de dados?</td></tr>
+    <tr><td>4</td><td><b>Dados e arquitetura</b></td><td>Que informação é guardada, quem pode aceder a quê e como se liga a outros sistemas?</td></tr>
+    <tr><td>5</td><td><b>Segurança e privacidade</b></td><td>O que se protege, contra que riscos e que exige a legislação de proteção de dados?</td></tr>
+    <tr><td>6</td><td><b>Testes e qualidade</b></td><td>Como se demonstra o funcionamento, em telemóvel e em computador, e com que desempenho?</td></tr>
+    <tr><td>7</td><td><b>Funcionalidades</b></td><td>O que se desenvolve já, o que fica para fase posterior e como se comprova que cada funcionalidade está concluída?</td></tr>
+    <tr><td>8</td><td><b>Automações e integrações</b></td><td>O que ocorre de forma automática, o que o desencadeia e que procedimento se aplica em caso de falha?</td></tr>
+    <tr><td>9</td><td><b>Entrega e manutenção</b></td><td>Qual a sequência de entrega, como se publica e reverte, o que é monitorizado e qual o custo de manutenção?</td></tr>
+  </table>
+  <h2><span class="k">A</span>Revisão prévia à aprovação</h2>
+  <p>O plano é analisado por assistentes especializados, cada um com uma função: arquitetura, segurança, acessibilidade, dados, testes, desempenho e, nos websites públicos, visibilidade em motores de pesquisa. Cada observação fica registada como aceite ou recusada, com a respetiva justificação.</p>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 5 FERRAMENTAS -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">02 / Ecossistema tecnológico</div>
+  <h1>Ecossistema tecnológico</h1>
+  <p class="lead">As ferramentas cumprem funções complementares. A seleção final depende da natureza e da escala de cada projeto: o conjunto abaixo constitui a base de referência, não uma lista fechada.</p>
+  <div class="tools">
+    <div class="tool"><div class="h"><span class="logo" style="color:#D97757">{{LOGO:claude}}</span><div><b>Claude Code</b><span class="r">Desenvolvimento assistido</span></div></div><p>Apoia a programação, a revisão e a documentação, com validação humana.</p><div class="v"><b>Valor:</b> maior produtividade com controlo mantido.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#181717">{{LOGO:github}}</span><div><b>GitHub</b><span class="r">Código e versões</span></div></div><p>Guarda o código-fonte e o histórico de todas as alterações.</p><div class="v"><b>Valor:</b> elimina a dependência de um único computador.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#2088FF">{{LOGO:githubactions}}</span><div><b>GitHub Actions</b><span class="r">Controlo de qualidade</span></div></div><p>Executa verificações e testes automáticos a cada alteração.</p><div class="v"><b>Valor:</b> reduz o risco de publicar alterações com falhas.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#000000">{{LOGO:vercel}}</span><div><b>Vercel</b><span class="r">Publicação web</span></div></div><p>Disponibiliza aplicações e versões de teste online.</p><div class="v"><b>Valor:</b> simplifica a publicação e a gestão de versões.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#3FCF8E">{{LOGO:supabase}}</span><div><b>Supabase</b><span class="r">Dados e autenticação</span></div></div><p>Gere a base de dados, os utilizadores e os ficheiros, com permissões por utilizador.</p><div class="v"><b>Valor:</b> centraliza os dados com permissões adequadas.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#F38020">{{LOGO:cloudflare}}</span><div><b>Cloudflare</b><span class="r">Domínios e proteção</span></div></div><p>Gere os endereços (DNS) e permite acrescentar proteção de tráfego.</p><div class="v"><b>Valor:</b> facilita o controlo e a disponibilidade dos serviços.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#362D59">{{LOGO:sentry}}</span><div><b>Sentry</b><span class="r">Monitorização técnica</span></div></div><p>Regista os erros das aplicações e das interfaces de programação no momento em que ocorrem.</p><div class="v"><b>Valor:</b> acelera a identificação e a correção de incidentes.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#000000">{{LOGO:resend}}</span><div><b>Resend</b><span class="r">E-mail transacional</span></div></div><p>Envia as mensagens automáticas das aplicações: confirmações, avisos e recuperação de conta.</p><div class="v"><b>Valor:</b> assegura notificações e comunicações do sistema.</div></div>
+    <div class="tool"><div class="h"><span class="logo" style="color:#EA4B71">{{LOGO:n8n}}</span><div><b>n8n</b><span class="r">Automações</span></div></div><p>Liga serviços entre si e automatiza tarefas repetitivas, com registo das execuções.</p><div class="v"><b>Valor:</b> reduz o trabalho manual. <span class="tag warn">a confirmar</span></div></div>
+  </div>
+  <h2><span class="k">A</span>Articulação entre as ferramentas</h2>
+  <div class="steps">
+    <div class="s"><b>1 Desenvolvimento</b>Claude Code e GitHub</div><div class="a">›</div>
+    <div class="s"><b>2 Verificação</b>GitHub Actions e testes</div><div class="a">›</div>
+    <div class="s"><b>3 Disponibilização</b>Vercel, Supabase e Cloudflare</div><div class="a">›</div>
+    <div class="s"><b>4 Acompanhamento</b>Sentry, Resend e suporte</div>
+  </div>
+  <p class="small">O código é guardado no GitHub, verificado pelo GitHub Actions e publicado na Vercel apenas após validação. Este percurso assegura rastreabilidade e reduz as intervenções manuais.</p>
+  <div class="box"><div class="l">Stack de referência, não exclusiva</div>Podem ser adotadas outras soluções, em função dos requisitos, da escala e do orçamento de cada projeto, incluindo alternativas indicadas pelo cliente. A escolha é fundamentada e aprovada sempre que tenha impacto contratual ou financeiro. A utilização do n8n para automações fica sujeita a decisão da direção.</div>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 6 GARANTIAS -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">03 / Garantias</div>
+  <h1>Qualidade, segurança e continuidade</h1>
+  <p class="lead">O método exige as mesmas verificações em todos os projetos. Algumas são automáticas e impedem a progressão em caso de falha; outras resultam de decisão de pessoas.</p>
+  <h2><span class="k">A</span>Requisitos do método</h2>
+  <table>
+    <tr><th style="width:52mm">Requisito</th><th>Aplicação</th></tr>
+    <tr><td><b>Plano aprovado previamente</b></td><td>Não se escreve código antes de uma pessoa aprovar o plano.</td></tr>
+    <tr><td><b>Testes antes do código</b></td><td>Define-se primeiro o critério que demonstra o correto funcionamento de cada funcionalidade, incluindo os cenários de falha.</td></tr>
+    <tr><td><b>Revisão por especialistas</b></td><td>Antes de cada entrega, assistentes especializados verificam segurança, dados, acessibilidade, desempenho e erros que passam despercebidos.</td></tr>
+    <tr><td><b>Senhas, chaves e dados protegidos</b></td><td>Não permanecem no código nem em conversas, e existe verificação automática que deteta eventuais fugas. Cada utilizador acede apenas aos seus dados, regra imposta na própria base de dados.</td></tr>
+    <tr><td><b>Separação por cliente</b></td><td>Repositório, publicação, base de dados, chaves e permissões identificados e isolados por projeto, em função do risco.</td></tr>
+    <tr><td><b>Claude Code com limites</b></td><td>Regras comuns a todos os projetos, especialistas reutilizáveis, permissões limitadas e <b>sem acesso irrestrito a produção</b>. As operações irreversíveis são bloqueadas sem confirmação de uma pessoa.</td></tr>
+    <tr><td><b>Publicação com reversão</b></td><td>A passagem a produção exige a aprovação de todas as verificações e prevê sempre o regresso à versão anterior.</td></tr>
+    <tr><td><b>Continuidade</b></td><td>Acessos empresariais com autenticação multifator, cópias de segurança testadas e documentação de entrega e de recuperação.</td></tr>
+  </table>
+  <h2><span class="k">B</span>Decisões que permanecem com pessoas</h2>
+  <ul>
+    <li>Preços, âmbito e condições comerciais.</li>
+    <li>Proteção de dados: que dados se recolhem, onde são armazenados e qual o acordo com o cliente. Trata-se de uma decisão jurídica e humana.</li>
+    <li>Aprovação do plano, validação da versão de testes e autorização da publicação.</li>
+  </ul>
+  <div class="box"><div class="l">Limitações</div>A inteligência artificial acelera e verifica, mas não substitui a responsabilidade técnica nem jurídica. O método foi concebido e testado por componentes; falta ainda validá-lo de ponta a ponta num primeiro projeto real e ajustá-lo com base nessa experiência.</div>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 7 IA POR TAREFA -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">03 / Garantias</div>
+  <h1>Seleção do modelo de inteligência artificial</h1>
+  <p class="lead">É utilizado o Claude, da Anthropic, disponível em quatro níveis. Os níveis mais avançados raciocinam melhor, mas têm custo e tempo de resposta superiores. A seleção adequada reduz o custo sem comprometer a qualidade.</p>
+  <table class="dense">
+    <tr><th style="width:34mm">Nível (modelo)</th><th>Utilização</th><th style="width:34mm">Custo relativo</th></tr>
+    <tr><td><span class="tag rap">Rápido</span><br><span class="small muted">Haiku 5.5</span></td><td>Pesquisa, síntese, classificação, tarefas repetitivas e leitura de grandes volumes de informação.</td><td>Cerca de 1/20 do nível equilibrado</td></tr>
+    <tr><td><span class="tag equ">Equilibrado</span><br><span class="small muted">Sonnet 5.5</span></td><td>Trabalho corrente: páginas, interface, formulários, textos, revisões e testes.</td><td>1x (referência)</td></tr>
+    <tr><td><span class="tag ava">Avançado</span><br><span class="small muted">Opus 5.5</span></td><td>Planeamento, arquitetura, lógica complexa (pagamentos, permissões, dados) e revisão de segurança.</td><td>Cerca de 2x</td></tr>
+    <tr><td><span class="tag max">Máximo</span><br><span class="small muted">Fable 5.1</span></td><td>Problemas de elevada dificuldade e trabalho autónomo prolongado, apenas quando o nível avançado se revela insuficiente.</td><td>Cerca de 5x</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Custos relativos calculados a partir dos preços de tabela da Anthropic (30 de outubro de 2026). Os preços e os modelos são alterados com frequência; o nível máximo pode ser faturado em separado, consoante o plano contratado pela empresa.</p>
+  <div class="box"><div class="l">Critério de seleção</div><b>Nível equilibrado para construir, avançado para decidir, rápido para ler.</b> Só se recorre a um nível superior quando o anterior, corretamente utilizado, se revela insuficiente.</div>
+  <h2><span class="k">A</span>Por tipo de projeto</h2>
+  <table class="dense">
+    <tr><th style="width:46mm">Projeto</th><th>Planeamento e decisões complexas</th><th>Construção</th><th>Revisão final</th></tr>
+    <tr><td><b>Landing page ou website institucional</b></td><td><span class="tag ava">Avançado</span> apenas no plano</td><td><span class="tag equ">Equilibrado</span></td><td><span class="tag equ">Equilibrado</span></td></tr>
+    <tr><td><b>Loja online</b></td><td><span class="tag ava">Avançado</span> plano e pagamentos</td><td><span class="tag equ">Equilibrado</span></td><td><span class="tag ava">Avançado</span> pagamentos e dados</td></tr>
+    <tr><td><b>Aplicação web ou portal</b></td><td><span class="tag ava">Avançado</span> dados e permissões</td><td><span class="tag equ">Equilibrado</span>; avançado nas regras de negócio</td><td><span class="tag ava">Avançado</span></td></tr>
+    <tr><td><b>Produto SaaS</b></td><td><span class="tag ava">Avançado</span> arquitetura e faturação</td><td><span class="tag equ">Equilibrado</span>; avançado no núcleo</td><td><span class="tag ava">Avançado</span></td></tr>
+    <tr><td><b>Aplicação móvel</b></td><td><span class="tag ava">Avançado</span> arquitetura e sincronização</td><td><span class="tag equ">Equilibrado</span></td><td><span class="tag equ">Equilibrado</span> e testes em dispositivo</td></tr>
+    <tr><td><b>Automação e integrações</b></td><td><span class="tag ava">Avançado</span> fluxos críticos</td><td><span class="tag equ">Equilibrado</span></td><td><span class="tag ava">Avançado</span> se houver pagamentos ou dados pessoais</td></tr>
+    <tr><td><b>Chatbot ou funcionalidade de IA</b></td><td><span class="tag ava">Avançado</span> desenho e avaliação</td><td><span class="tag equ">Equilibrado</span></td><td>Modelo final escolhido por testes</td></tr>
+    <tr><td><b>Manutenção e correções</b></td><td>n/a</td><td><span class="tag equ">Equilibrado</span> ou <span class="tag rap">Rápido</span></td><td><span class="tag equ">Equilibrado</span></td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">A tabela constitui um ponto de partida. Nas primeiras semanas será registado o resultado de cada escolha, para ajustar o critério com base na experiência.</p>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 8 PRECOS -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">04 / Orçamentação</div>
+  <h1>Referências de preço por tipo de projeto</h1>
+  <p class="lead">Valores praticados pelo mercado português, por tipo e dimensão de projeto. Constituem uma base para orçamentação e não uma tabela de preços da iPremium: o preço final é decisão da direção.</p>
+  <div class="box" style="margin-top:0"><div class="l">Condições de utilização</div>
+    <ul style="margin:0">
+      <li>A maioria das fontes são páginas de empresas que comercializam estes serviços, pelo que têm interesse comercial. Nenhuma corresponde a um estudo independente.</li>
+      <li>Para automação e inteligência artificial <b>não foram encontrados preços fiáveis de empresas portuguesas</b>: nesses casos o valor é calculado por horas e vem assinalado.</li>
+      <li>Valores de construção em euros, sem IVA, salvo indicação em contrário. Para o mesmo caderno de encargos, os orçamentos podem divergir cerca de 3 para 1, sobretudo pelas horas estimadas.</li>
+    </ul></div>
+  <table class="pricesum">
+    <tr><th style="width:56mm">Tipo de projeto</th><th>Preço de referência</th><th style="width:34mm">Prazo</th><th style="width:15mm">Fiab.</th><th class="n" style="width:10mm">Pág.</th></tr>
+    <tr><td><b>Landing page</b> (uma página)</td><td>800 a 1.200 €</td><td>1 a 2 semanas</td><td><span class="tag ok">média</span></td><td class="n">9</td></tr>
+    <tr><td><b>Website institucional</b></td><td>1.200 a 12.000 €</td><td>2 a 12 semanas</td><td><span class="tag ok">média</span></td><td class="n">9</td></tr>
+    <tr><td><b>Loja online</b></td><td>3.000 a 25.000 € ou mais</td><td>3 a 16 semanas</td><td><span class="tag ok">média</span></td><td class="n">10</td></tr>
+    <tr><td><b>Aplicação web, portal ou plataforma</b></td><td>7.500 a 150.000 € ou mais</td><td>4 semanas a 18 meses</td><td><span class="tag ok">média</span></td><td class="n">10</td></tr>
+    <tr><td><b>Plataforma de marcações à medida</b></td><td>8.000 a 30.000 €</td><td>6 a 12 semanas</td><td><span class="tag warn">baixa</span></td><td class="n">10</td></tr>
+    <tr><td><b>Aplicação móvel</b> (iOS e Android)</td><td>12.000 a 100.000 € ou mais</td><td>2 a 6 meses ou mais</td><td><span class="tag ok">média</span></td><td class="n">11</td></tr>
+    <tr><td><b>Produto SaaS</b></td><td>8.000 a 150.000 €</td><td>4 semanas a 9 meses</td><td><span class="tag warn">baixa</span></td><td class="n">11</td></tr>
+    <tr><td><b>Automação de processos</b></td><td>160 a 24.000 € (por horas)</td><td>2 dias a 3 meses</td><td><span class="tag warn">baixa</span></td><td class="n">12</td></tr>
+    <tr><td><b>Chatbot e agentes de IA</b></td><td>1.000 a 40.000 € + custo mensal</td><td>1 a 10 semanas</td><td><span class="tag warn">baixa</span></td><td class="n">12</td></tr>
+    <tr><td><b>Manutenção</b></td><td>40 a 800 € por mês; aplicações, 15 a 20% do valor por ano</td><td>contínuo</td><td><span class="tag ok">média</span></td><td class="n">13</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Fiabilidade: <span class="tag ok">média</span> várias fontes portuguesas coincidem; <span class="tag warn">baixa</span> poucas fontes, outros mercados ou cálculo por horas.</p>
+  <h2><span class="k">A</span>Composição de um orçamento</h2>
+  <div class="grid g3">
+    <div class="card"><b>1 Construção</b><span>Horas do plano aprovado multiplicadas pelo valor por hora (40 a 80 € no mercado), acrescidas de reserva para imprevistos. Propõe-se a orçamentação pela faixa de estúdio, sujeita a validação da direção.</span></div>
+    <div class="card"><b>2 Serviços recorrentes</b><span>Alojamento, base de dados, domínio, e-mail, monitorização e consumo de inteligência artificial, de acordo com os preços dos fornecedores (página 13).</span></div>
+    <div class="card"><b>3 Manutenção</b><span>Correções, atualizações, suporte e evolução contratada, mediante avença mensal ou percentagem anual do valor de construção.</span></div>
+  </div>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 9 SITES -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">04 / Orçamentação · Websites</div>
+  <h1>Websites: preço por dimensão</h1>
+  <p class="lead">Preço de construção, em euros, sem IVA. O valor aumenta com o número de páginas e, sobretudo, com a funcionalidade de cada uma.</p>
+  <table class="price">
+    <tr><th style="width:30mm">Dimensão</th><th>Âmbito</th><th style="width:30mm">Preço de referência</th><th style="width:20mm">Prazo</th><th style="width:14mm">Fiab.</th></tr>
+    <tr><td><b>1 página</b></td><td>Uma página, formulário de contacto, otimização base para motores de pesquisa, adaptada a telemóvel</td><td>800 a 1.200 €</td><td>1 a 2 sem.</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>2 a 3 páginas</b></td><td>Início, serviços e contacto, com desenho próprio</td><td>1.200 a 2.000 € <span class="muted">(estimado)</span></td><td>2 a 3 sem.</td><td><span class="tag warn">baixa</span></td></tr>
+    <tr><td><b>4 a 5 páginas</b></td><td>Acrescenta apresentação institucional e portfólio ou galeria</td><td>1.800 a 3.000 €</td><td>3 a 4 sem.</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>6 a 10 páginas</b></td><td>Gestão de conteúdos pelo cliente, blog opcional, otimização para pesquisa</td><td>3.000 a 5.000 €</td><td>4 a 6 sem.</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>10 a 15 páginas</b></td><td>Várias secções, blog, vários modelos de página</td><td>4.500 a 7.000 €</td><td>6 a 8 sem.</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>15 ou mais</b></td><td>Website institucional alargado, vários públicos</td><td>7.000 a 12.000 € <span class="muted">(estimado)</span></td><td>8 a 12 sem.</td><td><span class="tag warn">baixa</span></td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Base: guias de preços portugueses de 2026, que variam entre 150 € (uma página, execução própria) e mais de 10.000 € (websites de grande dimensão em agência). Os valores «estimados» resultam de interpolação entre dimensões vizinhas.</p>
+  <h2><span class="k">A</span>Acréscimos que alteram o orçamento</h2>
+  <table>
+    <tr><th style="width:56mm">Acréscimo</th><th>Referência de mercado</th></tr>
+    <tr><td><b>Idioma adicional</b></td><td>Desde 70 € por idioma; website multilingue desde 600 €; dois ou três idiomas, 1.000 a 3.000 €</td></tr>
+    <tr><td><b>Marcações online simples</b></td><td>Desde 400 €</td></tr>
+    <tr><td><b>Marcações ou área de clientes à medida</b></td><td>2.000 a 10.000 € ou mais; outra fonte indica 5.000 a 30.000 € em 3 a 9 meses (passa a projeto de aplicação)</td></tr>
+    <tr><td><b>Loja online integrada</b></td><td>Desde 1.500 €</td></tr>
+    <tr><td><b>Redação de conteúdos</b></td><td>50 a 150 € por página (outras fontes: 100 a 300 €)</td></tr>
+    <tr><td><b>Fotografia</b></td><td>100 a 500 € por conjunto</td></tr>
+    <tr><td><b>Otimização para motores de pesquisa</b></td><td>Cerca de 1.500 € de implementação inicial; auditoria, 500 a 3.000 €</td></tr>
+    <tr><td><b>Domínio .pt e alojamento básico</b></td><td>Domínio, 15 a 33 € por ano; domínio e alojamento, 80 a 200 € por ano</td></tr>
+    <tr><td><b>Logótipo, tradução por palavra, cookies e proteção de dados</b></td><td>Sem preços fiáveis encontrados: solicitar orçamento ao fornecedor</td></tr>
+  </table>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 10 LOJAS E APLICACOES WEB -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">04 / Orçamentação · Lojas e aplicações</div>
+  <h1>Lojas online e aplicações web</h1>
+  <p class="lead">Nestes projetos o número de páginas deixa de ser determinante: o preço depende dos perfis de utilizador, das integrações, dos pagamentos e dos relatórios. As dimensões abaixo foram definidas pela equipa técnica com base nas faixas publicadas.</p>
+  <h2><span class="k">A</span>Loja online</h2>
+  <table class="price dense">
+    <tr><th style="width:30mm">Dimensão</th><th>Âmbito</th><th style="width:30mm">Preço de referência</th><th style="width:20mm">Prazo</th><th style="width:14mm">Fiab.</th></tr>
+    <tr><td><b>Simples</b></td><td>Até cerca de 50 produtos, desenho profissional, pagamentos e portes padrão</td><td>3.000 a 5.000 €</td><td>3 a 6 sem.</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>Para PME</b></td><td>Catálogo médio, variantes, faturação e stock integrados, vários idiomas</td><td>6.000 a 10.000 €</td><td>6 a 10 sem.</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>Avançada</b></td><td>Vendas a empresas, ligação a sistemas de gestão, personalizações</td><td>12.000 a 25.000 € ou mais</td><td>10 a 16 sem.</td><td><span class="tag warn">baixa</span></td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Base: prestador individual, 2.000 a 5.000 €; agência, 5.000 a 15.000 €; com ligação a sistemas de gestão, acima de 25.000 €. Mensalidades da plataforma na página 13.</p>
+  <h2><span class="k">B</span>Aplicação web, portal ou plataforma</h2>
+  <table class="price dense">
+    <tr><th style="width:30mm">Dimensão</th><th>Âmbito</th><th style="width:30mm">Preço de referência</th><th style="width:20mm">Prazo</th><th style="width:14mm">Fiab.</th></tr>
+    <tr><td><b>Área interna de gestão</b></td><td>Acesso autenticado, listas e fichas, um ou dois perfis de utilizador, exportação de dados</td><td>7.500 a 15.000 €</td><td>4 a 8 sem.</td><td><span class="tag warn">baixa</span></td></tr>
+    <tr><td><b>Portal ou área reservada</b></td><td>Vários perfis de utilizador, ficheiros, e-mails automáticos, pagamentos simples</td><td>15.000 a 30.000 €</td><td>8 a 12 sem.</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>Plataforma integrada com outros sistemas</b></td><td>Ligação a gestão ou CRM, relatórios, registo de ações, faturação</td><td>30.000 a 75.000 €</td><td>3 a 5 meses</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>Plataforma de grande escala</b></td><td>Vários clientes na mesma plataforma, faturação recorrente, requisitos legais</td><td>75.000 a 150.000 € ou mais</td><td>6 a 18 meses</td><td><span class="tag warn">baixa</span></td></tr>
+    <tr><td><b>Marcações à medida</b></td><td>Agenda, clientes, lembretes e pagamentos</td><td>8.000 a 30.000 €</td><td>6 a 12 sem.</td><td><span class="tag warn">baixa</span></td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Base: a partir de 7.500 € (agências), 15.000 a 80.000 € ou mais, e um estudo português de custos de software que indica 30.000 a 150.000 € para soluções à medida. As dimensões intermédias são extrapolação da equipa técnica.</p>
+  <div class="box"><div class="l">Recomendação</div>Para marcações e áreas de cliente existem produtos já desenvolvidos entre 15 e 150 € por mês. Recomenda-se apresentar primeiro a solução existente e só depois o desenvolvimento à medida, indicando ao cliente o custo de cada alternativa.</div>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 11 APPS E SAAS -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">04 / Orçamentação · Aplicações e produtos</div>
+  <h1>Aplicações móveis e produtos SaaS</h1>
+  <p class="lead">Produtos com contas de utilizador, dados e, no caso das aplicações móveis, publicação nas lojas da Apple e da Google.</p>
+  <h2><span class="k">A</span>Aplicação móvel (iPhone e Android)</h2>
+  <table class="price">
+    <tr><th style="width:34mm">Dimensão</th><th>Âmbito</th><th style="width:30mm">Preço de referência</th><th style="width:20mm">Prazo</th><th style="width:14mm">Fiab.</th></tr>
+    <tr><td><b>Informativa ou de serviço simples</b></td><td>Conteúdo, contacto, notificações, sem conta de utilizador</td><td>12.000 a 25.000 €</td><td>2 a 4 meses</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>Com conta e dados</b></td><td>Contas de utilizador, base de dados, painel de gestão, ligação a outros sistemas</td><td>25.000 a 50.000 €</td><td>3 a 6 meses</td><td><span class="tag ok">média</span></td></tr>
+    <tr><td><b>Marketplace ou aplicação complexa</b></td><td>Tempo real, pagamentos, equipamentos, grande escala</td><td>60.000 a 100.000 € ou mais</td><td>6 meses ou mais</td><td><span class="tag warn">baixa</span></td></tr>
+  </table>
+  <ul class="small" style="margin-top:2mm">
+    <li>Uma única base de código para iPhone e Android permite poupar cerca de 30 a 40% face a duas aplicações separadas, segundo uma fonte portuguesa.</li>
+    <li>Contas de programador nas lojas: Apple, 99 USD por ano; Google, 25 USD numa única vez. Servidores: 20 a 200 € por mês. Manutenção: 15 a 20% do valor inicial por ano.</li>
+  </ul>
+  <h2><span class="k">B</span>Produto SaaS (software do cliente comercializado por subscrição)</h2>
+  <table class="price">
+    <tr><th style="width:34mm">Dimensão</th><th>Âmbito</th><th style="width:30mm">Preço de referência</th><th style="width:20mm">Prazo</th><th style="width:14mm">Fiab.</th></tr>
+    <tr><td><b>Protótipo sem código</b></td><td>Ferramentas visuais (Bubble, Webflow), para validar a ideia</td><td>8.000 a 20.000 €</td><td>4 a 8 sem.</td><td><span class="tag warn">baixa</span></td></tr>
+    <tr><td><b>Primeira versão programada</b></td><td>Contas, uma funcionalidade central, pagamentos e painel; âmbito fechado</td><td>20.000 a 60.000 €</td><td>3 a 4 meses</td><td><span class="tag warn">baixa</span></td></tr>
+    <tr><td><b>Produto completo</b></td><td>Vários perfis de utilizador, integrações, requisitos legais, administração</td><td>60.000 a 150.000 €</td><td>5 a 9 meses</td><td><span class="tag warn">baixa</span></td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Base: na Europa, a maioria das primeiras versões custa 20.000 a 150.000 €; equipas do sul e do leste da Europa, 20.000 a 60.000 €; soluções sem código, 5.000 a 20.000 €. Não inclui manutenção posterior ao lançamento.</p>
+  <div class="box"><div class="l">Recomendação</div>Para um cliente que ainda não validou a ideia, propor a dimensão mais baixa que permita validar a hipótese e remeter o produto completo para depois da validação. O plano distingue o que é desenvolvido de imediato do que fica para uma segunda fase.</div>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 12 AUTOMACAO E IA -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">04 / Orçamentação · Automação e IA</div>
+  <h1>Automações, chatbots e agentes de IA</h1>
+  <p class="lead">Quando o mercado português não publica preços, o orçamento é calculado por horas e fica assinalado. As horas são estimativas da equipa técnica, a ajustar com os primeiros projetos; o valor por hora considerado é de 40 a 80 €.</p>
+  <h2><span class="k">A</span>Automação de processos</h2>
+  <table class="price">
+    <tr><th style="width:36mm">Dimensão</th><th>Âmbito</th><th class="n" style="width:20mm">Horas</th><th style="width:30mm">Valor</th><th style="width:16mm">Prazo</th></tr>
+    <tr><td><b>Simples</b></td><td>Um evento desencadeia 3 a 5 passos num serviço</td><td class="n">4 a 8</td><td>160 a 640 €</td><td>2 a 3 dias</td></tr>
+    <tr><td><b>Avançada</b></td><td>Liga a outros serviços, repete com segurança e emite alerta em caso de falha</td><td class="n">12 a 30</td><td>480 a 2.400 €</td><td>1 sem.</td></tr>
+    <tr><td><b>Ligação a gestão ou CRM</b></td><td>Transferência de dados entre sistemas, com mapeamento e testes</td><td class="n">40 a 120</td><td>1.600 a 9.600 €</td><td>2 a 6 sem.</td></tr>
+    <tr><td><b>Programa de automação</b></td><td>5 a 10 fluxos, monitorização, documentação e formação</td><td class="n">120 a 300</td><td>4.800 a 24.000 €</td><td>1 a 3 meses</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Outro mercado (Brasil, em reais, não comparável): desde 200 por automação simples e 5.000 a 20.000 para ligação a sistemas de gestão. Ferramenta de automação: 20 a 50 € por mês (página 13).</p>
+  <h2><span class="k">B</span>Chatbots e agentes de IA</h2>
+  <table class="price">
+    <tr><th style="width:36mm">Dimensão</th><th>Âmbito</th><th style="width:44mm">Preço de referência</th><th>Mercado</th></tr>
+    <tr><td><b>Chatbot de website</b></td><td>Perguntas frequentes e contacto, numa plataforma já desenvolvida</td><td>1.000 a 2.000 € + mensalidade</td><td>Plataformas desde 15 € por mês</td></tr>
+    <tr><td><b>Chatbot com WhatsApp</b></td><td>Canal adicional e encaminhamento para uma pessoa</td><td>Chatbot + 300 a 800 €</td><td>Cerca de +10 € por mês</td></tr>
+    <tr><td><b>Agente integrado nos sistemas</b></td><td>Base de conhecimento, CRM, encaminhamento para humano, registos</td><td>3.000 a 16.000 € + operação</td><td>Portugal: 1.000 a 5.000 € + 250 a 1.200 € por mês</td></tr>
+    <tr><td><b>Agente empresarial</b></td><td>Vários sistemas, permissões, avaliação contínua, proteção de dados</td><td>12.000 a 40.000 € + operação</td><td>Internacional: 12.000 a 45.000 USD</td></tr>
+  </table>
+  <ul class="small" style="margin-top:2mm">
+    <li>O consumo de IA <b>do produto do cliente</b> constitui custo mensal do cliente: estima-se pelo volume de mensagens e integra os serviços recorrentes.</li>
+    <li>Uma fonte refere financiamento até 75% através do Portugal 2030 para chatbots; as condições <b>não foram verificadas</b>.</li>
+    <li>Implementação de CRM (exemplo HubSpot): desde cerca de 3.000 USD, em 6 a 12 semanas; fiabilidade <span class="tag warn">baixa</span>.</li>
+  </ul>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 13 MANUTENCAO E MENSAIS -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">04 / Orçamentação · Manutenção e serviços recorrentes</div>
+  <h1>Manutenção e serviços recorrentes</h1>
+  <p class="lead">Os dois últimos componentes de cada proposta. Os preços dos serviços correspondem aos das páginas oficiais dos fornecedores, consultadas a 30 de outubro de 2026.</p>
+  <h2><span class="k">A</span>Manutenção</h2>
+  <table class="dense">
+    <tr><th style="width:56mm">Tipo</th><th>Abrange</th><th style="width:44mm">Referência</th></tr>
+    <tr><td><b>Website simples</b></td><td>Atualizações, cópias de segurança, monitorização, pequenas alterações</td><td>40 a 150 € por mês</td></tr>
+    <tr><td><b>Gestão profissional, loja ou ligações a sistemas</b></td><td>O anterior, acrescido de conteúdos, desempenho e suporte com tempo de resposta</td><td>150 a 800 € por mês</td></tr>
+    <tr><td><b>Aplicação à medida ou móvel</b></td><td>Correções, atualizações e suporte</td><td>15 a 20% do valor de construção, por ano</td></tr>
+    <tr><td><b>Visibilidade em pesquisa (SEO)</b></td><td>Conteúdo, melhorias técnicas e relatórios</td><td>500 a 2.500 € por mês (um guia); consultoria pontual, 80 a 600 €</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Confirmar sempre o que a avença inclui: cópias de segurança, horas de suporte, tempos de resposta. A manutenção técnica não inclui gestão de conteúdos nem SEO.</p>
+  <h2><span class="k">B</span>Serviços de que a stack depende (preços oficiais, sem IVA)</h2>
+  <table class="dense">
+    <tr><th style="width:28mm">Serviço</th><th>Função</th><th style="width:70mm">Preço</th></tr>
+    <tr><td><b>Vercel</b></td><td>Publicação do website ou da aplicação</td><td>Gratuito (apenas testes); <b>Pro, 20 USD por mês</b></td></tr>
+    <tr><td><b>Supabase</b></td><td>Base de dados e contas de utilizador</td><td>Gratuito (limitado); <b>Pro, desde 25 USD por mês</b></td></tr>
+    <tr><td><b>Sentry</b></td><td>Alertas de erros</td><td>Gratuito (1 utilizador); <b>Team, 26 USD por mês</b></td></tr>
+    <tr><td><b>Resend</b></td><td>Envio de e-mails da aplicação</td><td>Gratuito (100 e-mails por dia); planos pagos sem limite diário</td></tr>
+    <tr><td><b>n8n</b></td><td>Automações</td><td>20 a 50 € por mês na nuvem; gratuito se auto-alojado (paga-se o servidor)</td></tr>
+    <tr><td><b>GitHub</b></td><td>Armazenamento do código</td><td>Gratuito; Team, 4 USD por utilizador e por mês</td></tr>
+  </table>
+  <h2><span class="k">C</span>Custo mensal típico</h2>
+  <table class="dense">
+    <tr><th style="width:54mm">Projeto</th><th>Composição</th><th class="n" style="width:36mm">Ordem de grandeza</th></tr>
+    <tr><td><b>Website institucional</b></td><td>Publicação (Vercel Pro), domínio e e-mail</td><td class="n">cerca de 20 a 45 USD</td></tr>
+    <tr><td><b>Loja online (Shopify)</b></td><td>Plano da plataforma (cerca de 19 a 289 € com pagamento anual), meios de pagamento e aplicações</td><td class="n">66 a 106 € (um guia)</td></tr>
+    <tr><td><b>Aplicação web em produção</b></td><td>Vercel Pro 20 + Supabase Pro 25 + Sentry Team 26 USD</td><td class="n">71 USD + e-mail, domínio e IA</td></tr>
+    <tr><td><b>Automação</b></td><td>n8n na nuvem, ou servidor próprio</td><td class="n">50 € ou servidor</td></tr>
+  </table>
+  <p class="small muted" style="margin-top:1.5mm">Valores em dólares sem conversão cambial; confirmar tabelas em euros e IVA ao enviar cada proposta.</p>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+<!-- 14 RESPONSABILIDADES E DECISOES -->
+<section class="page">
+  <div class="top"><span class="brand">iPREMIUM</span><span class="crumb">Sistemas / Inteligência Artificial</span></div>
+  <div class="eyebrow">05 / Responsabilidades e próximos passos</div>
+  <h1>Responsabilidades e decisões</h1>
+  <p class="lead">Para que o método funcione com segurança e previsibilidade, é necessário formalizar um conjunto de decisões que competem à direção.</p>
+  <h2><span class="k">A</span>Estrutura de responsabilidades</h2>
+  <table class="dense">
+    <tr><th style="width:52mm">Função</th><th>Decide e assegura</th></tr>
+    <tr><td><b>Direção e gestão comercial</b></td><td>Aprovação de preços, condições contratuais, prioridades e despesas fora dos limites definidos.</td></tr>
+    <tr><td><b>Coordenação técnica</b></td><td>Arquitetura, estimativas técnicas, qualidade, publicação, segurança operacional e reporte de progresso.</td></tr>
+    <tr><td><b>Cliente e responsável funcional</b></td><td>Validação do âmbito contratado, disponibilização de informação e aprovação dos resultados.</td></tr>
+  </table>
+  <h2><span class="k">B</span>Decisões a acordar com a direção</h2>
+  <table class="dense">
+    <tr><th style="width:8mm">#</th><th>Decisão</th></tr>
+    <tr><td>1</td><td>Quem aprova propostas, alterações ao âmbito e despesas recorrentes, e que autonomia existe para escolher e contratar serviços técnicos.</td></tr>
+    <tr><td>2</td><td>Quem suporta os custos mensais e como são faturados ao cliente; que serviços ficam abrangidos pela manutenção e quais são cobrados em separado.</td></tr>
+    <tr><td>3</td><td>Quem detém o código, os domínios e as contas de alojamento; como são aprovados os custos de IA, os excedentes e as novas funcionalidades; procedimento de suporte, de incidentes e de saída de clientes.</td></tr>
+    <tr><td>4</td><td>Conta de trabalho com o Claude: plano, número de lugares e faturação do nível máximo. Preços e margem da iPremium (as faixas deste documento são apenas referência).</td></tr>
+    <tr><td>5</td><td>Ferramenta de automação (nuvem ou servidor próprio) e responsável pelo custo. Proteção de dados: subcontratantes, localização dos dados e acordo com o cliente.</td></tr>
+  </table>
+  <h2><span class="k">C</span>Implementação proposta</h2>
+  <p>Formalizar as decisões, preparar contas e modelos de projeto, aplicar o método num primeiro caso real, rever resultados e normalizar a operação. Sem prazos impostos nesta proposta.</p>
+  <h2><span class="k">D</span>Origem dos valores</h2>
+  <p class="small"><b>Modelos de IA e preços:</b> documentação oficial da Anthropic e do Claude Code, consultada a 30 de outubro de 2026. <b>Serviços recorrentes:</b> páginas oficiais de preços da Vercel, Supabase, Sentry, Resend, n8n e GitHub. <b>Preços de construção:</b> guias de empresas portuguesas de 2026, estudo de custos de software (Caixa Mágica), diretórios de prestadores, Clutch e guias internacionais. <b>Logótipos:</b> Simple Icons (CC0); as marcas pertencem aos respetivos titulares.</p>
+  <div class="box"><div class="l">Nota</div>Valores sujeitos a alteração: confirmar na origem e obter duas ou três referências de mercado antes de os utilizar numa proposta.</div>
+  <div class="foot"><span>Documento para a direção</span><span class="pg"></span></div>
+</section>
+
+</body>
+</html>
